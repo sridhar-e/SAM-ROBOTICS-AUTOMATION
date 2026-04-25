@@ -1,80 +1,80 @@
-
 "use client";
 
 import React from 'react';
 import Link from 'next/link';
-import { Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Linkedin, Mail, MapPin, Phone, Instagram, ArrowUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 export function Footer() {
   return (
-    <footer id="footer" className="bg-secondary text-white pt-24 pb-12 px-6 md:px-24">
+    <footer id="footer" className="bg-secondary text-white pt-32 pb-12 px-6 md:px-24 border-t border-white/5 relative overflow-hidden">
+      <div className="absolute top-0 right-0 dot-grid w-96 h-96 opacity-[0.03]" />
+      
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
-          <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-8 bg-primary flex items-center justify-center transform rotate-45">
-                <div className="w-2.5 h-2.5 bg-white"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32">
+          {/* Brand Info */}
+          <div className="lg:col-span-4">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-10 h-10 bg-primary flex items-center justify-center transform rotate-45">
+                <div className="w-3 h-3 bg-white"></div>
               </div>
-              <span className="text-sm font-black tracking-tighter uppercase">Sam Robotics</span>
+              <span className="text-xl font-black tracking-tighter uppercase">Sam Robotics</span>
             </div>
-            <p className="text-sm text-white/40 leading-relaxed max-w-xs mb-8">
-              Leading manufacturer of packaging machinery solutions, driving industrial efficiency with precision engineering and advanced automation.
+            <p className="text-sm text-white/40 leading-relaxed max-w-sm mb-12 font-medium">
+              Leading the transition to Industry 4.0 with precision-engineered packaging automation and modular industrial solutions.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group">
-                <Linkedin className="w-4 h-4 text-white/40 group-hover:text-white" />
-              </Link>
-              <Link href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group">
-                <Mail className="w-4 h-4 text-white/40 group-hover:text-white" />
-              </Link>
+              {[Linkedin, Instagram, Mail].map((Icon, i) => (
+                <Link key={i} href="#" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group">
+                  <Icon className="w-5 h-5 text-white/40 group-hover:text-white" />
+                </Link>
+              ))}
             </div>
           </div>
 
-          <div>
-            <h4 className="font-black text-[10px] tracking-[0.2em] uppercase mb-8 text-white">Solutions</h4>
-            <ul className="space-y-4 text-sm font-medium text-white/40">
-              <li><Link href="#products" className="hover:text-primary transition-colors">Liquid Filling</Link></li>
-              <li><Link href="#products" className="hover:text-primary transition-colors">Capping Systems</Link></li>
-              <li><Link href="#products" className="hover:text-primary transition-colors">Labeling Units</Link></li>
-              <li><Link href="#products" className="hover:text-primary transition-colors">Palletizing Robots</Link></li>
-            </ul>
+          {/* Links Grid */}
+          <div className="lg:col-span-5 grid grid-cols-2 gap-10">
+            <div>
+              <h4 className="font-black text-[10px] tracking-[0.3em] uppercase mb-10 text-primary">Solutions</h4>
+              <ul className="space-y-5 text-[11px] font-black tracking-widest uppercase text-white/40">
+                <li><Link href="#products" className="hover:text-white transition-colors">Filling Units</Link></li>
+                <li><Link href="#products" className="hover:text-white transition-colors">Capping Pro</Link></li>
+                <li><Link href="#products" className="hover:text-white transition-colors">Labeling Tech</Link></li>
+                <li><Link href="#products" className="hover:text-white transition-colors">Conveyor Systems</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-black text-[10px] tracking-[0.3em] uppercase mb-10 text-primary">Resources</h4>
+              <ul className="space-y-5 text-[11px] font-black tracking-widest uppercase text-white/40">
+                <li><Link href="#infrastructure" className="hover:text-white transition-colors">Our Facility</Link></li>
+                <li><Link href="#process" className="hover:text-white transition-colors">How we work</Link></li>
+                <li><Link href="#contact" className="hover:text-white transition-colors">Technical Docs</Link></li>
+                <li><Link href="#contact" className="hover:text-white transition-colors">Support</Link></li>
+              </ul>
+            </div>
           </div>
 
-          <div>
-            <h4 className="font-black text-[10px] tracking-[0.2em] uppercase mb-8 text-white">Quick Links</h4>
-            <ul className="space-y-4 text-sm font-medium text-white/40">
-              <li><Link href="#infrastructure" className="hover:text-primary transition-colors">Infrastructure</Link></li>
-              <li><Link href="#updates" className="hover:text-primary transition-colors">News & Media</Link></li>
-              <li><Link href="#contact" className="hover:text-primary transition-colors">Partner Program</Link></li>
-              <li><Link href="#contact" className="hover:text-primary transition-colors">Support Center</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-black text-[10px] tracking-[0.2em] uppercase mb-8 text-white">Get in Touch</h4>
-            <ul className="space-y-4 text-sm font-medium text-white/40">
-              <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-primary mt-0.5" />
-                <span>+91 739 739 5665</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-primary mt-0.5" />
-                <span>info@samrobotics.com</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-primary mt-0.5" />
-                <span>Industrial Area, Sector 5<br/>Mumbai, MH 400001</span>
-              </li>
-            </ul>
+          {/* Newsletter / CTA */}
+          <div className="lg:col-span-3">
+             <h4 className="font-black text-[10px] tracking-[0.3em] uppercase mb-10 text-primary">Stay Informed</h4>
+             <p className="text-xs text-white/40 mb-8 font-medium">Join our network for latest engineering updates and industry insights.</p>
+             <div className="space-y-4">
+                <Input className="bg-white/5 border-white/10 rounded-none h-14 text-xs font-bold tracking-widest uppercase focus:border-primary" placeholder="EMAIL ADDRESS" />
+                <Button className="w-full bg-primary hover:bg-white hover:text-primary rounded-none font-black h-14 text-[10px] tracking-widest uppercase transition-all duration-300">
+                  Subscribe
+                </Button>
+             </div>
           </div>
         </div>
         
-        <div className="flex flex-col md:row-reverse md:flex-row justify-between items-center pt-8 border-t border-white/5 text-[10px] font-black tracking-widest uppercase text-white/20">
-          <div className="flex gap-8 mb-4 md:mb-0">
-            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:row-reverse md:flex-row justify-between items-center pt-12 border-t border-white/5 text-[9px] font-black tracking-[0.3em] uppercase text-white/20">
+          <div className="flex gap-12 mb-6 md:mb-0">
+            <Link href="#" className="hover:text-white transition-colors">Legal Policy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Data Privacy</Link>
           </div>
-          <span>© 2026 Sam Robotics and Automation. All Rights Reserved.</span>
+          <span>© 2026 Sam Robotics & Automation India.</span>
         </div>
       </div>
     </footer>
