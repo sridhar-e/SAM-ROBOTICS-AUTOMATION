@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-machinery",
+      "description": "Modern automated packaging production line",
+      "imageUrl": "https://picsum.photos/seed/rob1/1200/800",
+      "imageHint": "industrial machinery"
+    },
+    {
+      "id": "liquid-filling",
+      "description": "Liquid filling machine nozzles",
+      "imageUrl": "https://picsum.photos/seed/rob2/600/400",
+      "imageHint": "filling machine"
+    },
+    {
+      "id": "capping-machine",
+      "description": "Automated bottle capping system",
+      "imageUrl": "https://picsum.photos/seed/rob3/600/400",
+      "imageHint": "capping machine"
+    },
+    {
+      "id": "labeling-machine",
+      "description": "Precise bottle labeling unit",
+      "imageUrl": "https://picsum.photos/seed/rob4/600/400",
+      "imageHint": "labeling machine"
+    },
+    {
+      "id": "conveyor-system",
+      "description": "Modular industrial conveyor belt",
+      "imageUrl": "https://picsum.photos/seed/rob5/600/400",
+      "imageHint": "conveyor belt"
+    },
+    {
+      "id": "cartoning-machine",
+      "description": "High speed cartoning equipment",
+      "imageUrl": "https://picsum.photos/seed/rob6/600/400",
+      "imageHint": "cartoning machinery"
+    },
+    {
+      "id": "palletizing-robot",
+      "description": "Industrial robotic palletizing arm",
+      "imageUrl": "https://picsum.photos/seed/rob7/600/400",
+      "imageHint": "palletizing robot"
+    },
+    {
+      "id": "infra-design",
+      "description": "Engineering and design center",
+      "imageUrl": "https://picsum.photos/seed/rob8/800/600",
+      "imageHint": "industrial design"
+    },
+    {
+      "id": "infra-assembly",
+      "description": "Machine assembly floor",
+      "imageUrl": "https://picsum.photos/seed/rob9/800/600",
+      "imageHint": "factory floor"
+    },
+    {
+      "id": "infra-testing",
+      "description": "Quality control testing lab",
+      "imageUrl": "https://picsum.photos/seed/rob10/800/600",
+      "imageHint": "quality testing"
+    }
+  ]
 }
