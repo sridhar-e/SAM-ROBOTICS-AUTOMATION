@@ -1,8 +1,7 @@
-
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -24,9 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { suggestProducts } from '@/ai/flows/ai-product-suggestor';
-import { Sparkles, Loader2, CheckCircle2 } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { CheckCircle2 } from 'lucide-react';
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -38,10 +35,7 @@ const formSchema = z.object({
 });
 
 export function InquiryForm() {
-  const [isAiLoading, setIsAiLoading] = useState(false);
-  const [suggestedProducts, setSuggestedProducts] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
-  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -54,33 +48,6 @@ export function InquiryForm() {
       message: "",
     },
   });
-
-  async function handleAiSuggestion() {
-    const message = form.getValues("message");
-    if (!message || message.length < 10) {
-      toast({
-        title: "More detail needed",
-        description: "Please write a bit more about your needs for the AI to suggest products.",
-      });
-      return;
-    }
-
-    setIsAiLoading(true);
-    try {
-      const result = await suggestProducts({ inquiryMessage: message });
-      setSuggestedProducts(result.suggestedProducts);
-      if (result.suggestedProducts.length > 0) {
-        toast({
-          title: "Suggestions ready!",
-          description: "Our AI found some relevant products for you.",
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsAiLoading(false);
-    }
-  }
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
@@ -181,15 +148,6 @@ export function InquiryForm() {
               <FormItem>
                 <div className="flex justify-between items-center mb-1">
                   <FormLabel className="font-bold uppercase text-[10px] tracking-widest">Your Requirements *</FormLabel>
-                  <button
-                    type="button"
-                    onClick={handleAiSuggestion}
-                    disabled={isAiLoading}
-                    className="text-[10px] font-black tracking-widest uppercase text-primary flex items-center gap-1 hover:underline disabled:opacity-50"
-                  >
-                    {isAiLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Sparkles className="w-3 h-3" />}
-                    Analyze with AI
-                  </button>
                 </div>
                 <FormControl>
                   <Textarea 
@@ -202,30 +160,6 @@ export function InquiryForm() {
               </FormItem>
             )}
           />
-
-          <AnimatePresence>
-            {suggestedProducts.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className="bg-primary/5 border-l-4 border-primary p-4 mb-4"
-              >
-                <p className="text-[10px] font-black tracking-widest uppercase text-primary mb-2">AI Product Recommendations</p>
-                <div className="flex flex-wrap gap-2">
-                  {suggestedProducts.map((prod) => (
-                    <span 
-                      key={prod} 
-                      className="px-2 py-1 bg-white border border-primary/20 text-[10px] font-bold cursor-pointer hover:bg-primary hover:text-white transition-colors"
-                      onClick={() => form.setValue("productInterest", prod)}
-                    >
-                      {prod}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
 
           <FormField
             control={form.control}
