@@ -154,7 +154,7 @@ export default function AboutPage() {
                     <div className="w-full md:w-[45%]">
                       <div className={`p-8 border-2 border-border hover:border-primary transition-all duration-500 bg-white group ${idx % 2 === 0 ? 'text-left' : 'md:text-right'}`}>
                         <span className="text-4xl font-black text-primary/20 mb-4 block group-hover:text-primary transition-colors">{item.year}</span>
-                        <h3 className="text-2xl font-black uppercase tracking-tight mb-4">{item.title}</h3>
+                        <h3 className="text-2xl font-black tracking-tight mb-4">{item.title}</h3>
                         <p className="text-muted-foreground font-medium leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
@@ -336,7 +336,9 @@ export default function AboutPage() {
                 { title: "Industry 4.0", desc: "Compliant with Modern Smart Factory Standards" }
               ].map((cert, idx) => (
                 <div key={idx} className="p-10 bg-muted/30 border-2 border-border flex flex-col items-center text-center group hover:border-primary transition-colors">
-                  <Award className="w-12 h-12 text-primary mb-6" />
+                  <div className="w-16 h-16 bg-white/5 border border-primary/20 flex items-center justify-center mb-6 rounded-full group-hover:bg-primary/10 transition-colors">
+                    <Award className="w-8 h-8 text-primary" />
+                  </div>
                   <h4 className="text-lg font-black uppercase tracking-tight mb-2">{cert.title}</h4>
                   <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest">{cert.desc}</p>
                 </div>
