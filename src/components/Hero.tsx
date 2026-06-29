@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Globe, Cpu, Settings } from 'lucide-react';
+import { ArrowRight, Globe, Package, Users, ShieldCheck, Clock } from 'lucide-react';
 import Link from 'next/link';
 
 export function Hero() {
@@ -31,6 +31,14 @@ export function Hero() {
     hidden: { y: 40, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
   };
+
+  const stats = [
+    { icon: Package, label: "Machines Delivered", val: "2,000+" },
+    { icon: Globe, label: "Countries Exported To", val: "25+" },
+    { icon: Users, label: "Happy Clients", val: "500+" },
+    { icon: ShieldCheck, label: "Certified", val: "ISO · CE" },
+    { icon: Clock, label: "After Sales Support", val: "24 × 7" }
+  ];
 
   return (
     <section 
@@ -100,19 +108,14 @@ export function Hero() {
         {/* Quick Stats Banner */}
         <motion.div 
           variants={itemVariants}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/5"
+          className="grid grid-cols-2 lg:grid-cols-5 gap-8 pt-12 border-t border-white/5"
         >
-          {[
-            { icon: Globe, label: "Global Presence", val: "25+ Countries" },
-            { icon: Cpu, label: "Specialization", val: "VFFS & Fillers" },
-            { icon: Settings, label: "Industries", val: "FMCG / Pharma" },
-            { icon: Globe, label: "Origin", val: "Proudly Indian" }
-          ].map((stat, i) => (
+          {stats.map((stat, i) => (
             <div key={i} className="flex items-center gap-4 group">
               <stat.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
               <div>
-                <p className="text-[10px] font-black tracking-widest text-white/40 uppercase">{stat.label}</p>
-                <p className="text-sm font-bold text-white/80 uppercase">{stat.val}</p>
+                <p className="text-sm font-bold text-white/80 uppercase leading-none mb-1">{stat.val}</p>
+                <p className="text-[10px] font-black tracking-widest text-white/40 uppercase leading-tight">{stat.label}</p>
               </div>
             </div>
           ))}
