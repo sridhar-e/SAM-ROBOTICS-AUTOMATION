@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Globe, Package, Users, ShieldCheck, Clock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export function Hero() {
@@ -32,19 +32,11 @@ export function Hero() {
     visible: { y: 0, opacity: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
   };
 
-  const stats = [
-    { icon: Package, label: "Machines Delivered", val: "2,000+" },
-    { icon: Globe, label: "Countries Exported To", val: "25+" },
-    { icon: Users, label: "Happy Clients", val: "500+" },
-    { icon: ShieldCheck, label: "Certified", val: "ISO · CE" },
-    { icon: Clock, label: "After Sales Support", val: "24 × 7" }
-  ];
-
   return (
     <section 
       ref={containerRef}
       id="hero" 
-      className="relative min-h-screen bg-secondary flex flex-col justify-center pt-32 pb-20 px-6 md:px-24 overflow-hidden"
+      className="relative min-h-[90vh] bg-secondary flex flex-col justify-center pt-32 pb-20 px-6 md:px-24 overflow-hidden"
     >
       {/* Dynamic Background Elements */}
       <motion.div style={{ y: y1 }} className="absolute inset-0 opacity-20 pointer-events-none">
@@ -89,7 +81,7 @@ export function Hero() {
         
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-6 mb-24"
+          className="flex flex-col sm:flex-row gap-6"
         >
           <Button asChild size="lg" className="bg-primary text-white font-black h-20 px-16 rounded-none text-sm tracking-widest uppercase group relative overflow-hidden transition-all duration-500 border-none">
             <Link href="#contact" className="relative z-20 flex items-center justify-center gap-2">
@@ -103,22 +95,6 @@ export function Hero() {
               Explore Our Machines
             </Link>
           </Button>
-        </motion.div>
-
-        {/* Quick Stats Banner */}
-        <motion.div 
-          variants={itemVariants}
-          className="grid grid-cols-2 lg:grid-cols-5 gap-8 pt-12 border-t border-white/5"
-        >
-          {stats.map((stat, i) => (
-            <div key={i} className="flex items-center gap-4 group">
-              <stat.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
-              <div>
-                <p className="text-sm font-bold text-white/80 uppercase leading-none mb-1">{stat.val}</p>
-                <p className="text-[10px] font-black tracking-widest text-white/40 uppercase leading-tight">{stat.label}</p>
-              </div>
-            </div>
-          ))}
         </motion.div>
       </motion.div>
     </section>

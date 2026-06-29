@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
+import { Stats } from '@/components/Stats';
 import { InquiryForm } from '@/components/InquiryForm';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
@@ -16,23 +17,16 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { 
-  Factory, 
   ShieldCheck, 
-  Zap, 
   ArrowRight, 
   Box, 
   Wrench, 
-  Microscope, 
-  Briefcase, 
-  Landmark, 
   Headset, 
   Globe, 
   Handshake, 
   Cpu, 
   Quote, 
-  MessageSquare, 
   Mail as MailIcon, 
-  PhoneCall,
   Phone
 } from 'lucide-react';
 import Link from 'next/link';
@@ -171,6 +165,9 @@ export default function Home() {
       
       <main ref={containerRef}>
         <Hero />
+        
+        {/* Standalone Stats Section */}
+        <Stats />
 
         {/* Who We Are Section */}
         <section id="who-we-are" className="py-12 md:py-16 bg-white relative overflow-hidden">
