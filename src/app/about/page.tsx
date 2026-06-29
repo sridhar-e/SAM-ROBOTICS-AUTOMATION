@@ -383,7 +383,7 @@ export default function AboutPage() {
                     <Award className="w-8 h-8 text-primary" />
                   </div>
                   <h4 className="text-lg font-black uppercase tracking-tight mb-2">{cert.title}</h4>
-                  <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest leading-relaxed">{cert.desc}</p>
+                  <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest text-center leading-relaxed">{cert.desc}</p>
                 </div>
               ))}
             </div>
@@ -414,16 +414,19 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.8] mb-12"
+              className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-8"
             >
-              Partner with the <br /> <span className="text-primary italic">Best in Automation</span>
+              Work With a <br /> <span className="text-primary italic">Manufacturer That <br /> Stays Involved.</span>
             </motion.h2>
+            <p className="text-white/70 text-xl font-medium max-w-2xl mx-auto mb-16 leading-relaxed">
+              Whether you need a standard machine or something built to your exact specification — start with a conversation.
+            </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
                <Button asChild size="lg" className="bg-primary text-white font-black h-20 px-16 rounded-none text-sm tracking-widest uppercase hover:bg-white hover:text-secondary transition-all">
-                  <Link href="/#contact" className="flex items-center gap-3">Get a Quote <ArrowRight className="ml-3 w-5 h-5" /></Link>
+                  <Link href="/contact" className="flex items-center gap-3">Get a Quote <ArrowRight className="ml-3 w-5 h-5" /></Link>
                </Button>
                <Button asChild variant="outline" size="lg" className="border-2 border-white/20 text-white font-black h-20 px-16 rounded-none text-sm tracking-widest uppercase bg-transparent hover:bg-white hover:text-secondary transition-all">
-                  <Link href="/#our-machines">View Catalogue</Link>
+                  <Link href="/products" className="flex items-center gap-3">Explore Our Machines <ArrowRight className="ml-3 w-5 h-5" /></Link>
                </Button>
             </div>
           </div>
