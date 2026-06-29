@@ -18,7 +18,8 @@ import {
   Users, 
   Zap, 
   Search, 
-  Handshake
+  Handshake,
+  Quote
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -69,7 +70,7 @@ export default function AboutPage() {
 
       <main className="flex-grow">
         {/* 1. Header Section */}
-        <section className="relative min-h-screen flex items-center bg-white overflow-hidden pt-32 pb-20">
+        <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden pt-40 lg:pt-52 pb-20">
           <div className="absolute inset-y-0 right-0 w-full lg:w-[60%] z-0">
             <Image 
               src="/About-Hero.webp"
@@ -204,18 +205,6 @@ export default function AboutPage() {
                     Today, Senthil leads the engineering and client relationship work at SAM — ensuring that every custom build, every installation, and every after-sales commitment reflects the quality standard SAM was built on.
                   </p>
                 </div>
-
-                <div className="mt-16 pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center gap-12">
-                   <div>
-                     <span className="text-4xl font-black text-secondary block mb-1">15+</span>
-                     <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Years Field Experience</span>
-                   </div>
-                   <div className="w-px h-12 bg-border hidden sm:block" />
-                   <div>
-                     <span className="text-4xl font-black text-secondary block mb-1">2020</span>
-                     <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Year Founded</span>
-                   </div>
-                </div>
               </motion.div>
             </div>
           </div>
@@ -224,7 +213,7 @@ export default function AboutPage() {
         {/* 5. Mission & Vision */}
         <section className="py-24 bg-muted/30 px-6 md:px-24 border-y border-border">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
               <motion.div 
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -235,11 +224,16 @@ export default function AboutPage() {
                   <Target className="w-16 h-16 text-primary/10 group-hover:text-primary/20 transition-colors" />
                 </div>
                 <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 flex items-center gap-4">
-                  <div className="w-8 h-1 bg-primary" /> Mission
+                  <div className="w-8 h-1 bg-primary" /> Our Mission
                 </h3>
-                <p className="text-xl font-medium leading-relaxed text-secondary">
-                  To deliver reliable, innovative, and efficient packaging automation solutions that improve manufacturing productivity and drive customer growth.
-                </p>
+                <div className="space-y-6">
+                  <p className="text-xl font-medium leading-relaxed text-secondary">
+                    To build packaging machinery that manufacturers can rely on — completely. From the quality of the components to the support after delivery, SAM exists to give every client the machine they need and the team that stands behind it.
+                  </p>
+                  <p className="text-sm font-black text-primary uppercase tracking-[0.2em]">
+                    Reliable machines. Genuine support. Every time.
+                  </p>
+                </div>
               </motion.div>
 
               <motion.div 
@@ -252,13 +246,33 @@ export default function AboutPage() {
                   <Eye className="w-16 h-16 text-white/5 group-hover:text-white/10 transition-colors" />
                 </div>
                 <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 flex items-center gap-4 text-white">
-                  <div className="w-8 h-1 bg-primary" /> Vision
+                  <div className="w-8 h-1 bg-primary" /> Our Vision
                 </h3>
-                <p className="text-xl font-medium leading-relaxed text-white/70">
-                  To become one of the most trusted global packaging machine manufacturers through engineering excellence, customer success, and Industry 4.0 integration.
-                </p>
+                <div className="space-y-6">
+                  <p className="text-xl font-medium leading-relaxed text-white/80">
+                    To be India's most trusted packaging machinery manufacturer — the name every buyer checks first and benchmarks against. To be the standard, not just an option.
+                  </p>
+                  <p className="text-sm font-black text-primary uppercase tracking-[0.2em]">
+                    The benchmark, not just a choice.
+                  </p>
+                </div>
               </motion.div>
             </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <Quote className="w-12 h-12 text-primary/20 mx-auto mb-6" />
+              <h4 className="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-2 italic">
+                "Quality Is Not An Act. It's a Practice."
+              </h4>
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-muted-foreground">
+                — The SAM brand principle
+              </p>
+            </motion.div>
           </div>
         </section>
 
