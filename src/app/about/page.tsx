@@ -78,7 +78,7 @@ export default function AboutPage() {
         <section className="relative min-h-screen flex items-center overflow-hidden bg-secondary pt-48 pb-24">
           <div className="absolute inset-0 opacity-40">
             <Image 
-              src={PlaceHolderImages.find(img => img.id === 'hero-machinery')?.imageUrl || ""}
+              src="/About-Hero.webp"
               alt="Industrial Manufacturing"
               fill
               className="object-cover"
