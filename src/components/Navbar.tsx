@@ -45,7 +45,7 @@ export function Navbar({ variant = 'light' }: NavbarProps) {
             )}>
               Sam Robotics
             </span>
-            <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-primary">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-primary">
               Engineering Excellence
             </span>
           </div>
@@ -53,7 +53,7 @@ export function Navbar({ variant = 'light' }: NavbarProps) {
       </div>
 
       <div className={cn(
-        "hidden lg:flex gap-10 text-[10px] tracking-[0.2em] uppercase font-black items-center",
+        "hidden lg:flex gap-10 text-[13px] tracking-[0.2em] uppercase font-black items-center",
         scrolled || isDark ? "text-secondary/60" : "text-white/60"
       )}>
         <Link href="/#our-machines" className="hover:text-primary transition-all duration-300 relative group">
@@ -78,7 +78,7 @@ export function Navbar({ variant = 'light' }: NavbarProps) {
           scrolled || isDark ? "border-secondary/10" : "border-white/10"
         )}>
           <Button asChild variant="outline" className={cn(
-            "rounded-none font-black h-10 px-6 text-[10px] tracking-widest uppercase transition-all duration-300",
+            "rounded-none font-black h-11 px-8 text-[12px] tracking-widest uppercase transition-all duration-300",
             scrolled || isDark 
               ? "border-primary text-primary hover:bg-primary hover:text-white" 
               : "border-primary text-primary hover:bg-primary hover:text-white"
