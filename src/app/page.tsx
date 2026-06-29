@@ -11,7 +11,22 @@ import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Factory, ShieldCheck, Zap, ArrowRight, Box, Wrench, Microscope, Briefcase, Landmark, CheckCircle2 } from 'lucide-react';
+import { 
+  Factory, 
+  ShieldCheck, 
+  Zap, 
+  ArrowRight, 
+  Box, 
+  Wrench, 
+  Microscope, 
+  Briefcase, 
+  Landmark, 
+  Headset,
+  Globe,
+  Handshake,
+  Cpu,
+  CheckCircle2
+} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -55,28 +70,34 @@ export default function Home() {
     },
   ];
 
-  const reasons = [
+  const whyChooseFeatures = [
     {
+      icon: ShieldCheck,
       title: "Quality-Grade Components",
       desc: "Every machine is built with industrial-grade components — Siemens PLCs, Festo pneumatics, SS304 contact parts. The same quality you’d expect from premium manufacturers."
     },
     {
+      icon: Cpu,
       title: "Genuine Custom Engineering",
       desc: "As a custom packing machine manufacturer, SAM builds to your exact specifications. We visit your factory, understand your product, and engineer the solution — not a catalogue item."
     },
     {
+      icon: Wrench,
       title: "End-to-End Installation & Training",
       desc: "From factory loading to civil prep, installation, and operator training at your site — we stay until the machine runs. Export orders get a full week on-site."
     },
     {
-      title: "Fast Spare Parts. 24×7 Support.",
+      icon: Headset,
+      title: "Fast Spare Parts & 24×7 Support",
       desc: "Most spare parts delivered within 1 day. Critical parts within 1 week. 24×7 video call support resolves most issues the same day — anywhere in India or overseas."
     },
     {
+      icon: Globe,
       title: "Export-Ready from South India",
       desc: "ISO and CE certified. IE Code registered. As a packaging machine manufacturer in South India with full export capability, SAM ships to 25+ countries — UAE, UK, USA, Germany, Australia, and more."
     },
     {
+      icon: Handshake,
       title: "AMC & Long-Term Partnership",
       desc: "Annual Maintenance Contracts available. Spare parts stocked by part number. SAM is not a box-shifter — we build relationships that last as long as the machine does."
     }
@@ -267,37 +288,76 @@ export default function Home() {
           <div className="absolute top-0 right-0 dot-grid w-1/3 h-full opacity-[0.03] -z-10" />
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-24">
-              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">WHY CHOOSE</span>
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none uppercase mb-12">
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block"
+              >
+                WHY CHOOSE SAM
+              </motion.span>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl md:text-7xl font-black tracking-tighter leading-none uppercase mb-12"
+              >
                 Why Manufacturers Choose SAM
-              </h2>
-              <p className="max-w-2xl mx-auto text-xl text-muted-foreground font-medium">
-                The packing machinery market has many options. Here is what sets SAM apart.
-              </p>
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="max-w-2xl mx-auto text-xl text-muted-foreground font-medium"
+              >
+                The packing machinery market has many options. Here's what sets SAM apart.
+              </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {reasons.map((reason, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+              {whyChooseFeatures.map((feature, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white p-12 border border-border group hover:border-primary transition-all duration-500"
+                  className="bg-white p-12 border border-border group hover:border-primary hover:shadow-xl transition-all duration-500 flex flex-col h-full"
                 >
-                  <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500">
-                    <CheckCircle2 className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-500" />
+                  <div className="w-16 h-16 bg-muted flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500">
+                    <feature.icon className="w-8 h-8 text-secondary group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="text-xl font-black mb-6 tracking-tight uppercase leading-tight">
-                    {reason.title}
+                  <h3 className="text-xl font-black mb-6 tracking-tight uppercase leading-tight group-hover:text-primary transition-colors">
+                    {feature.title}
                   </h3>
                   <p className="text-muted-foreground text-sm font-medium leading-relaxed">
-                    {reason.desc}
+                    {feature.desc}
                   </p>
                 </motion.div>
               ))}
             </div>
+
+            {/* Bottom CTA Area */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto text-center py-20 border-y border-border"
+            >
+              <h3 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter uppercase leading-none">
+                Ready to upgrade your production line?
+              </h3>
+              <p className="text-lg text-muted-foreground font-medium mb-12">
+                Speak with our engineering team to discuss your packaging requirements and discover the right automation solution.
+              </p>
+              <Button asChild size="lg" className="bg-secondary text-white font-black rounded-none h-16 px-12 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-primary transition-all duration-300">
+                <Link href="#contact" className="flex items-center gap-3">
+                  Consult With An Engineer <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </motion.div>
           </div>
         </section>
 
