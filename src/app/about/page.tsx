@@ -53,7 +53,7 @@ export default function AboutPage() {
     { 
       icon: Cpu, 
       title: "Solutions Over Catalogues", 
-      desc: "When a client's product doesn't fit a standard machine, we send an engineer to understand the problem firsthand — and build the right solution." 
+      desc: "Most of our machines are custom-built. When a client's product doesn't fit a standard machine, we send an engineer to understand the problem firsthand — and build the right solution." 
     },
     { 
       icon: Headset, 
@@ -325,7 +325,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-16">
               <div className="lg:col-span-5">
                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">INFRASTRUCTURE</span>
-                <h2 className="text-5xl md:text-7xl font-black tracking-tighter">Our Manufacturing Facility</h2>
+                <h2 className="text-4xl md:text-5xl font-black tracking-tighter">Our Manufacturing Facility</h2>
               </div>
               <div className="lg:col-span-7 space-y-6">
                 <p className="text-white font-medium text-lg leading-relaxed">
@@ -389,8 +389,8 @@ export default function AboutPage() {
 
             <div className="flex items-center justify-center gap-4 py-8 border-t border-border">
               <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-              <p className="text-sm font-black uppercase tracking-widest text-secondary/60 text-center">
-                Additional certifications arranged on request to meet destination-country requirements for export orders.
+              <p className="text-sm font-black tracking-widest text-secondary/60 text-center">
+                Additional Certifications Arranged on Request to Meet Destination-Country Requirements for Export Orders.
               </p>
             </div>
           </div>
