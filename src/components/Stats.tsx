@@ -15,7 +15,7 @@ export function Stats() {
   ];
 
   return (
-    <section className="bg-primary py-24 px-6 md:px-24 relative overflow-hidden">
+    <section className="bg-[#ff5842] py-24 px-6 md:px-24 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
          <div className="dot-grid w-full h-full" />
@@ -45,7 +45,7 @@ export function Stats() {
                 
                 {/* White Circle Icon Container with elevation shadow */}
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_15px_40px_rgba(0,0,0,0.2)] relative z-10 transform transition-all duration-500 group-hover:scale-110">
-                  <stat.icon className="w-8 h-8 text-primary" />
+                  <stat.icon className="w-8 h-8 text-[#ff5842]" />
                 </div>
               </div>
 
