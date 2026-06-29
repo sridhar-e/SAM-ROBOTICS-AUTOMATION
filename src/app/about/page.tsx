@@ -38,7 +38,7 @@ export default function AboutPage() {
     { 
       year: "2021–23", 
       title: "Custom Builds. Enterprise Clients. First Exports.", 
-      desc: "As word spread, SAM moved from single machines to custom builds, full processing lines, and its first export orders.\n\n2021 — First export. KRK Exports of Madurai ordered a packaging line for their operation in Natham, Tamil Nadu, and shipped a SAM machine onward to Malaysia — commissioned entirely online and running to this day. They returned for a second machine in 2024.\n\n2021–22 — Into the Gulf and Africa. Early export orders followed across the Gulf and East Africa — including a complete bottling line for Forest Africa in Zambia (storage tank, filling, capping, labelling, batch coding, and final packing), proving SAM could deliver a full turnkey line, not just a single machine.\n\n2022 — A famous-name custom build. Santhi Sweets of Tirunelveli — one of the region's best-known aluva makers — needed inkjet coding applied to pouches filled with the product at nearly 100°C. SAM engineered a printing solution that held up to the heat: the kind of problem a catalogue machine can't solve.\n\n2023 — Backing startups for the long term. Tasty Food Products in Chennai took a startup packing machine and stayed with SAM for on-site service and monthly consumables — an early example of the after-sales relationship SAM is built around"
+      desc: "As word spread, SAM moved from single machines to custom builds, full processing lines, and its first export orders.\n\n<strong>2021 — First export.</strong> KRK Exports of Madurai ordered a packaging line for their operation in Natham, Tamil Nadu, and shipped a SAM machine onward to Malaysia — commissioned entirely online and running to this day. They returned for a second machine in 2024.\n\n<strong>2021–22 — Into the Gulf and Africa.</strong> Early export orders followed across the Gulf and East Africa — including a complete bottling line for Forest Africa in Zambia (storage tank, filling, capping, labelling, batch coding, and final packing), proving SAM could deliver a full turnkey line, not just a single machine.\n\n<strong>2022 — A famous-name custom build.</strong> Santhi Sweets of Tirunelveli — one of the region's best-known aluva makers — needed inkjet coding applied to pouches filled with the product at nearly 100°C. SAM engineered a printing solution that held up to the heat: the kind of problem a catalogue machine can't solve.\n\n<strong>2023 — Backing startups for the long term.</strong> Tasty Food Products in Chennai took a startup packing machine and stayed with SAM for on-site service and monthly consumables — an early example of the after-sales relationship SAM is built around"
     },
     { 
       year: "Today", 
@@ -155,7 +155,10 @@ export default function AboutPage() {
                       <div className={`p-8 border-2 border-border hover:border-primary transition-all duration-500 bg-white group ${idx % 2 === 0 ? 'text-left' : 'md:text-right'}`}>
                         <span className="text-4xl font-black text-primary/20 mb-4 block group-hover:text-primary transition-colors">{item.year}</span>
                         <h3 className="text-2xl font-black tracking-tight mb-4">{item.title}</h3>
-                        <p className="text-muted-foreground font-medium leading-relaxed whitespace-pre-line">{item.desc}</p>
+                        <p 
+                          className="text-muted-foreground font-medium leading-relaxed whitespace-pre-line"
+                          dangerouslySetInnerHTML={{ __html: item.desc }}
+                        />
                       </div>
                     </div>
                     
