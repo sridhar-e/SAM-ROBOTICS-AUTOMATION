@@ -88,7 +88,7 @@ export default function AboutPage() {
               src="/About-Hero.webp"
               alt="Industrial Manufacturing"
               fill
-              className="object-cover object-center grayscale opacity-40 lg:opacity-100"
+              className="object-cover object-center opacity-40 lg:opacity-100"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 lg:via-white/40 to-transparent z-10" />
