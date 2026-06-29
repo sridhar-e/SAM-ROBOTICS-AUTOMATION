@@ -553,17 +553,21 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="lg:col-span-7"
               >
-                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-10">
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-0">
                   Ready to Build Your <span className="text-primary italic">Packing Line?</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-white/50 font-medium leading-relaxed max-w-2xl">
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="lg:col-span-5"
+              >
+                <p className="text-xl md:text-2xl text-white/50 font-medium leading-relaxed">
                   Tell us your product, your production volume, and your timeline. Our engineers will recommend the right machine — and stand behind it.
                 </p>
               </motion.div>
-              
-              <div className="lg:col-span-5 hidden lg:block">
-                <div className="w-full h-[1px] bg-white/10" />
-              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
