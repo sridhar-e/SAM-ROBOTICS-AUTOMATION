@@ -25,12 +25,26 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   const timeline = [
-    { year: "2020", title: "Company Founded", desc: "Started with a vision to revolutionize the packaging market with engineering integrity from Coimbatore." },
-    { year: "2021", title: "First Machine Delivered", desc: "Successfully installed our first high-accuracy VFFS machine for a major food manufacturer." },
-    { year: "2022", title: "Expansion into Export", desc: "Successfully shipped our first overseas order, marking our entry into the global market." },
-    { year: "2023", title: "ISO & CE Certification", desc: "Achieved international quality benchmarks, enabling entry into European and US markets." },
-    { year: "2024", title: "25+ Countries Served", desc: "Established a strong presence across 4 continents with over 500+ happy global clients." },
-    { year: "2025", title: "Industry 4.0 Integration", desc: "Launching smart-enabled machinery with remote diagnostics and AI-driven efficiency." }
+    { 
+      year: "Pre-2020", 
+      title: "The Problem Is Identified in the Field", 
+      desc: "SAM's founder spent 15 years as a field service engineer across South India. FMCG, food, pharma, chemical — the same problems kept appearing: machines that broke down and stayed broken, suppliers who vanished after the sale, and no one who combined real engineering knowledge with genuine client accountability." 
+    },
+    { 
+      year: "2020", 
+      title: "SAM Is Founded — During a Pandemic", 
+      desc: "Covid made reliable, hygienic packaging a business-critical necessity. Senthil founded SAM Robotics & Automation in Coimbatore — combining 15 years of field experience with a direct manufacturing operation built on one principle: quality is not an act, it's a practice." 
+    },
+    { 
+      year: "2021–23", 
+      title: "Custom Builds. Enterprise Clients. First Exports.", 
+      desc: "As word spread, SAM moved from single machines to custom builds, full processing lines, and its first export orders. 2021 saw the first export to Malaysia, commissioned entirely online. Early export orders followed across the Gulf and East Africa, including a complete bottling line for Forest Africa in Zambia. In 2022, SAM engineered a custom heat-resistant coding solution for Santhi Sweets, solving a problem catalogue machines couldn't touch."
+    },
+    { 
+      year: "Today", 
+      title: "2,000+ Machines. 25+ Countries. The Same Standard.", 
+      desc: "SAM machines now run in factories across India and in 25+ countries — Gulf, East Africa, Southeast Asia, Europe, and the Americas. ISO and CE certified. Clients include ITC, TVS Group, Hindustan Foods, and the Tamil Nadu Government. From startup packing machines to full turnkey industrial lines — every one built, installed, and backed the same way." 
+    }
   ];
 
   const values = [
@@ -117,10 +131,11 @@ export default function AboutPage() {
 
         {/* 2. Our Story (Timeline) */}
         <section className="py-24 px-6 md:px-24 bg-white relative border-t border-border">
-          <div className="max-w-7xl auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-24">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">JOURNEY</span>
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Our Story</h2>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-2">Our Story</h2>
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-[0.2em]">Four chapters. One consistent standard.</p>
             </div>
 
             <div className="relative">
@@ -140,7 +155,7 @@ export default function AboutPage() {
                       <div className={`p-8 border-2 border-border hover:border-primary transition-all duration-500 bg-white group ${idx % 2 === 0 ? 'text-left' : 'md:text-right'}`}>
                         <span className="text-4xl font-black text-primary/20 mb-4 block group-hover:text-primary transition-colors">{item.year}</span>
                         <h3 className="text-2xl font-black uppercase tracking-tight mb-4">{item.title}</h3>
-                        <p className="text-muted-foreground font-medium">{item.desc}</p>
+                        <p className="text-muted-foreground font-medium leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                     
