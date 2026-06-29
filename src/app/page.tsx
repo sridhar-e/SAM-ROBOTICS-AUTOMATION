@@ -55,6 +55,33 @@ export default function Home() {
     },
   ];
 
+  const reasons = [
+    {
+      title: "Quality-Grade Components",
+      desc: "Every machine is built with industrial-grade components — Siemens PLCs, Festo pneumatics, SS304 contact parts. The same quality you’d expect from premium manufacturers."
+    },
+    {
+      title: "Genuine Custom Engineering",
+      desc: "As a custom packing machine manufacturer, SAM builds to your exact specifications. We visit your factory, understand your product, and engineer the solution — not a catalogue item."
+    },
+    {
+      title: "End-to-End Installation & Training",
+      desc: "From factory loading to civil prep, installation, and operator training at your site — we stay until the machine runs. Export orders get a full week on-site."
+    },
+    {
+      title: "Fast Spare Parts. 24×7 Support.",
+      desc: "Most spare parts delivered within 1 day. Critical parts within 1 week. 24×7 video call support resolves most issues the same day — anywhere in India or overseas."
+    },
+    {
+      title: "Export-Ready from South India",
+      desc: "ISO and CE certified. IE Code registered. As a packaging machine manufacturer in South India with full export capability, SAM ships to 25+ countries — UAE, UK, USA, Germany, Australia, and more."
+    },
+    {
+      title: "AMC & Long-Term Partnership",
+      desc: "Annual Maintenance Contracts available. Spare parts stocked by part number. SAM is not a box-shifter — we build relationships that last as long as the machine does."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen selection:bg-primary selection:text-white bg-background overflow-x-hidden">
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left" style={{ scaleX }} />
@@ -235,6 +262,45 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Why Choose Section */}
+        <section id="why-choose" className="py-32 md:py-64 bg-muted/20 relative overflow-hidden">
+          <div className="absolute top-0 right-0 dot-grid w-1/3 h-full opacity-[0.03] -z-10" />
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-24">
+              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">WHY CHOOSE</span>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none uppercase mb-12">
+                Why Manufacturers Choose SAM
+              </h2>
+              <p className="max-w-2xl mx-auto text-xl text-muted-foreground font-medium">
+                The packing machinery market has many options. Here is what sets SAM apart.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {reasons.map((reason, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white p-12 border border-border group hover:border-primary transition-all duration-500"
+                >
+                  <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500">
+                    <CheckCircle2 className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-500" />
+                  </div>
+                  <h3 className="text-xl font-black mb-6 tracking-tight uppercase leading-tight">
+                    {reason.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm font-medium leading-relaxed">
+                    {reason.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Mission Section / Engineering Philosophy */}
         <section id="intro" className="py-32 md:py-64 px-6 md:px-24 max-w-7xl mx-auto relative">
           <div className="absolute top-0 right-0 dot-grid w-96 h-96 -z-10" />
@@ -312,9 +378,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Products Section (Legacy/Old) */}
-        {/* Note: I'm keeping this here but Our Machines is the new primary section */}
 
         {/* CTA Banner */}
         <section className="bg-primary py-48 md:py-72 px-6 md:px-24 relative overflow-hidden">
