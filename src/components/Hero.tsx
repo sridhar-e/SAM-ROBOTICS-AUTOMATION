@@ -54,29 +54,29 @@ export function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-6xl relative z-10"
+        className="max-w-7xl relative z-10"
       >
         <motion.div
           variants={itemVariants}
           className="text-[10px] tracking-[0.5em] uppercase mb-10 text-primary font-black flex items-center gap-6"
         >
           <span className="w-16 h-[2px] bg-primary block"></span>
-          Industry 4.0 Pioneers
+          Engineered in India. Running in 25+ Countries.
         </motion.div>
         
         <motion.h1
           variants={itemVariants}
-          className="text-6xl md:text-[11rem] font-black leading-[0.8] mb-12 text-white tracking-tighter"
+          className="text-5xl md:text-[8rem] font-black leading-[0.9] mb-12 text-white tracking-tighter uppercase"
         >
-          ENGINEERED<br />
-          <span className="text-transparent stroke-white" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.4)' }}>FOR SCALE</span>
+          Automatic Packing <br />
+          <span className="text-transparent stroke-white" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.4)' }}>Machine Manufacturer</span>
         </motion.h1>
         
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-2xl mb-16 text-white/50 font-medium max-w-2xl leading-relaxed"
+          className="text-lg md:text-xl mb-16 text-white/50 font-medium max-w-4xl leading-relaxed"
         >
-          Developing modular, high-performance packaging systems for the global manufacturing sector. 500+ systems commissioned worldwide.
+          SAM Robotics & Automation manufactures industrial packing machinery — VFFS pouch packing machines, auger fillers, bottle filling plants, and blending equipment — for FMCG, pharma, food, and chemical industries across India and in 25+ countries worldwide.
         </motion.p>
         
         <motion.div
@@ -84,14 +84,15 @@ export function Hero() {
           className="flex flex-col sm:flex-row gap-6 mb-24"
         >
           <Button asChild size="lg" className="bg-primary text-white font-black h-20 px-16 rounded-none text-sm tracking-widest uppercase group relative overflow-hidden transition-all duration-500 border-none">
-            <Link href="#contact" className="relative z-20 flex items-center justify-center">
-              <span>Request Quote</span>
+            <Link href="#contact" className="relative z-20 flex items-center justify-center gap-2">
+              <span>Get a Quote</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
           
           <Button asChild variant="outline" size="lg" className="border-2 border-white/10 text-white hover:bg-white hover:text-secondary font-black h-20 px-16 rounded-none text-sm tracking-widest bg-transparent transition-all duration-300 uppercase">
-            <Link href="#products" className="flex items-center gap-3">
-              Catalogue <ArrowRight className="w-5 h-5" />
+            <Link href="#products">
+              Explore Our Machines
             </Link>
           </Button>
         </motion.div>
@@ -102,10 +103,10 @@ export function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/5"
         >
           {[
-            { icon: Globe, label: "Global Reach", val: "15+ Countries" },
-            { icon: Cpu, label: "Tech Stack", val: "Industry 4.0" },
-            { icon: Settings, label: "Turnkey", val: "End-to-End" },
-            { icon: Globe, label: "Support", val: "24/7 Service" }
+            { icon: Globe, label: "Global Presence", val: "25+ Countries" },
+            { icon: Cpu, label: "Specialization", val: "VFFS & Fillers" },
+            { icon: Settings, label: "Industries", val: "FMCG / Pharma" },
+            { icon: Globe, label: "Origin", val: "Proudly Indian" }
           ].map((stat, i) => (
             <div key={i} className="flex items-center gap-4 group">
               <stat.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
