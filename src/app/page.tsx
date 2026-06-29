@@ -640,8 +640,8 @@ export default function Home() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32">
             <div>
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground mb-8 block">Partner with us</span>
-              <h2 className="text-7xl md:text-9xl font-black mb-20 tracking-tighter leading-[0.8] uppercase">
-                Let's <br /> Build.
+              <h2 className="text-5xl md:text-7xl font-black mb-20 tracking-tighter leading-[0.8] uppercase">
+                Ready to Build <br /> Your Packing <br /> Line?
               </h2>
               
               <div className="space-y-16">
