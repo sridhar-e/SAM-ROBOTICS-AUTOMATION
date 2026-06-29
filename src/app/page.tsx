@@ -651,8 +651,8 @@ export default function Home() {
                       <Box className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Request a Quote</h4>
-                      <p className="text-3xl font-black tracking-tight">Tailored Proposal</p>
+                      <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Tailored Proposal</h4>
+                      <p className="text-3xl font-black tracking-tight">Request a Quote</p>
                     </div>
                   </Link>
                   <div className="pl-[120px]">
