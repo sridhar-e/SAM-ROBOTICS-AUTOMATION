@@ -644,13 +644,25 @@ export default function Home() {
               </h2>
               
               <div className="space-y-16">
-                <div className="flex items-center gap-10 group cursor-pointer">
-                  <div className="w-20 h-20 bg-primary flex items-center justify-center shrink-0 transition-all group-hover:bg-secondary">
-                    <PhoneCall className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Technical Sales</h4>
-                    <p className="text-3xl font-black tracking-tight">+91 739 739 5665</p>
+                <div className="flex flex-col gap-4">
+                  <a href="tel:+917397395665" className="flex items-center gap-10 group cursor-pointer">
+                    <div className="w-20 h-20 bg-primary flex items-center justify-center shrink-0 transition-all group-hover:bg-secondary">
+                      <MessageSquare className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">WhatsApp</h4>
+                      <p className="text-3xl font-black tracking-tight">+91 7397395665</p>
+                    </div>
+                  </a>
+                  <div className="pl-[120px]">
+                    <a 
+                      href="https://wa.me/917397395665" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors"
+                    >
+                      Chat Now <ArrowRight className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
                 
