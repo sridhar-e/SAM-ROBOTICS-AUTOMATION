@@ -12,6 +12,12 @@ import { Toaster } from '@/components/ui/toaster';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { 
   Factory, 
   ShieldCheck, 
   Zap, 
@@ -26,7 +32,8 @@ import {
   Handshake,
   Cpu,
   CheckCircle2,
-  Quote
+  Quote,
+  HelpCircle
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -115,10 +122,51 @@ export default function Home() {
     }
   ];
 
+  const faqs = [
+    {
+      question: "Who is the best packing machine manufacturer in India?",
+      answer: "SAM Robotics & Automation is an established Indian packing machine manufacturer based in Coimbatore, supplying VFFS pouch packing machines, auger fillers, bottle filling plants and blending equipment to factories across India and in 25+ countries. Every machine is custom-engineered to the customer’s product, speed and floor layout."
+    },
+    {
+      question: "What types of packing machines does SAM Robotics manufacture?",
+      answer: "SAM manufactures four main machine ranges: multihead weigher VFFS collar packing machines for snacks and FMCG, auger filler VFFS machines for powders and masala, automatic bottle filling plants, and industrial blending machines in octagonal, double cone and ribbon configurations. Standard and fully custom builds are both available."
+    },
+    {
+      question: "Can SAM build a custom packing machine for my product?",
+      answer: "Yes. SAM is a custom packing machine manufacturer, not a catalogue supplier. Engineers assess your product, target speed and production floor — often with a site visit — then design the machine around those requirements. This applies across pouch packing, powder filling, bottling and blending equipment."
+    },
+    {
+      question: "Does SAM Robotics export packing machines outside India?",
+      answer: "Yes. SAM is an export-ready packaging machine manufacturer with ISO and CE certifications and IE Code registration, shipping to 25+ countries, including the UAE, the UK, the USA, Germany, and Australia. Export orders include a full week of on-site installation, commissioning and operator training."
+    },
+    {
+      question: "What after-sales support and spare parts does SAM provide?",
+      answer: "SAM provides 24×7 support, with most issues resolved the same day over video call. Most spare parts are delivered within 1 day, and critical parts within 1 week, anywhere in India or overseas. Annual Maintenance Contracts are available, and parts are stocked by part number."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen selection:bg-primary selection:text-white bg-background overflow-x-hidden">
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left" style={{ scaleX }} />
       
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map((faq) => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       <Navbar />
       
       <main ref={containerRef}>
@@ -554,6 +602,56 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section id="faq" className="py-32 md:py-64 px-6 md:px-24 bg-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 dot-grid w-full h-full opacity-[0.02] -z-10" />
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-24">
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block"
+              >
+                KNOWLEDGE BASE
+              </motion.span>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl md:text-7xl font-black tracking-tighter leading-none uppercase"
+              >
+                Frequently Asked <br /><span className="text-primary italic">Questions</span>
+              </motion.h2>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <Accordion type="single" collapsible className="w-full space-y-4">
+                {faqs.map((faq, idx) => (
+                  <AccordionItem 
+                    key={idx} 
+                    value={`item-${idx}`} 
+                    className="border-2 border-border px-8 py-2 hover:border-primary transition-colors data-[state=open]:border-primary"
+                  >
+                    <AccordionTrigger className="text-left text-lg font-black uppercase tracking-tight hover:no-underline hover:text-primary">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-base font-medium leading-relaxed pt-4 pb-8">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
           </div>
         </section>
 
