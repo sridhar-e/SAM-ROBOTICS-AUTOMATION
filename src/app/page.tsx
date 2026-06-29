@@ -641,7 +641,7 @@ export default function Home() {
             <div>
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground mb-8 block">Partner with us</span>
               <h2 className="text-5xl md:text-7xl font-black mb-20 tracking-tighter leading-[0.8] uppercase">
-                Ready to Build <br /> Your Packing <br /> Line?
+                Ready to Build <br /> Your <span className="text-primary italic">Packing <br /> Line?</span>
               </h2>
               
               <div className="space-y-16">
