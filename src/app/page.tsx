@@ -11,8 +11,9 @@ import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Factory, ShieldCheck, Zap, ArrowRight, Box, Wrench, Microscope, Briefcase, Landmark } from 'lucide-react';
+import { Factory, ShieldCheck, Zap, ArrowRight, Box, Wrench, Microscope, Briefcase, Landmark, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -23,38 +24,34 @@ export default function Home() {
     restDelta: 0.001
   });
 
-  const products = [
+  const machines = [
     {
-      id: "1",
-      index: "01",
-      title: "Liquid Filling Systems",
-      description: "High-precision volumetric and gravity filling systems for beverages, oils, and chemicals. Automatic level control with minimal wastage.",
-      tags: ["Precision", "SS-316L"],
-      imageUrl: PlaceHolderImages.find(img => img.id === 'liquid-filling')?.imageUrl || "",
+      id: "m1",
+      title: "Multi Head Weigher VFFS Collar Packing Machine",
+      description: "The multihead weigher VFFS machine Coimbatore’s snack and FMCG factories rely on — 30 to 200 pouches per minute, high-accuracy weighing, and minimal product giveaway.",
+      bestFor: ["Snacks", "FMCG", "Grocery", "Seeds", "Spices"],
+      imageUrl: PlaceHolderImages.find(img => img.id === 'multihead-vffs')?.imageUrl || "",
     },
     {
-      id: "2",
-      index: "02",
-      title: "Capping Infrastructure",
-      description: "Automated screw capping, ROPP capping, and press-on systems. Consistent torque control for all types of bottles and jars.",
-      tags: ["Automated", "Torque-Ctrl"],
-      imageUrl: PlaceHolderImages.find(img => img.id === 'capping-machine')?.imageUrl || "",
+      id: "m2",
+      title: "Auger VFFS Collar Packing Machine",
+      description: "Precision auger dosing for masala, tea, coffee, powders, and non-free-flowing products. Built for accuracy, hygiene, and minimal waste on every fill.",
+      bestFor: ["Spices", "Masala", "Tea", "Coffee", "Chemical", "Pharma"],
+      imageUrl: PlaceHolderImages.find(img => img.id === 'auger-vffs')?.imageUrl || "",
     },
     {
-      id: "3",
-      index: "03",
-      title: "High-Speed Labeling",
-      description: "Self-adhesive systems for round, flat, and oval containers. Front-back, wrap-around, and top labeling with precise placement.",
-      tags: ["Fast", "Flexible"],
-      imageUrl: PlaceHolderImages.find(img => img.id === 'labeling-machine')?.imageUrl || "",
+      id: "m3",
+      title: "Bottle Filling Plant",
+      description: "End-to-end bottling lines including filling, capping, labelling, date-coding, and final packaging. Configured for granules, powders, and liquids.",
+      bestFor: ["Pharma", "FMCG", "Beverages", "Chemical", "Cosmetics"],
+      imageUrl: PlaceHolderImages.find(img => img.id === 'bottle-filling-line')?.imageUrl || "",
     },
     {
-      id: "4",
-      index: "04",
-      title: "Logistics Conveyors",
-      description: "Customizable belt, slat, and chain conveyor systems. Designed for seamless material handling and line integration.",
-      tags: ["Modular", "Heavy-Duty"],
-      imageUrl: PlaceHolderImages.find(img => img.id === 'conveyor-system')?.imageUrl || "",
+      id: "m4",
+      title: "Blending Machines",
+      description: "Industrial mixers for homogeneous blending of powders, granules, and semi-solids. Available in octagonal, double cone, and ribbon configurations.",
+      bestFor: ["Pharma Mixing", "Spices", "Tea", "Masala", "Food Processing"],
+      imageUrl: PlaceHolderImages.find(img => img.id === 'blending-machine')?.imageUrl || "",
     },
   ];
 
@@ -127,6 +124,114 @@ export default function Home() {
                  </span>
                ))}
             </div>
+          </div>
+        </section>
+
+        {/* Our Machines Section */}
+        <section id="our-machines" className="py-32 md:py-64 bg-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 dot-grid w-full h-full opacity-[0.02] -z-10" />
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-32">
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block"
+              >
+                Core Catalogue
+              </motion.span>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-6xl md:text-8xl font-black tracking-tighter leading-none uppercase mb-12"
+              >
+                Our Machines
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="max-w-3xl mx-auto text-xl text-muted-foreground font-medium"
+              >
+                From high-speed pouch packing to precision powder filling and complete bottle filling lines — SAM builds the machine your production floor needs. Every machine is available in standard and custom configurations.
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32">
+              {machines.map((machine, idx) => (
+                <motion.div
+                  key={machine.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8, delay: idx * 0.1 }}
+                  className="group bg-white border border-border overflow-hidden flex flex-col hover:border-primary/50 hover:shadow-2xl transition-all duration-500"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                    <Image
+                      src={machine.imageUrl}
+                      alt={machine.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      data-ai-hint="industrial packaging machine"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                  
+                  <div className="p-10 flex flex-col flex-1">
+                    <h3 className="text-3xl font-black mb-6 tracking-tighter uppercase leading-none group-hover:text-primary transition-colors">
+                      {machine.title}
+                    </h3>
+                    <p className="text-muted-foreground font-medium mb-10 leading-relaxed line-clamp-3">
+                      {machine.description}
+                    </p>
+                    
+                    <div className="mt-auto space-y-8">
+                      <div>
+                        <span className="text-[10px] font-black uppercase tracking-widest text-primary block mb-4">Best For</span>
+                        <div className="flex flex-wrap gap-2">
+                          {machine.bestFor.map(tag => (
+                            <span key={tag} className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-muted border border-border text-muted-foreground">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="pt-8 border-t border-border">
+                        <Link 
+                          href="/products" 
+                          className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] hover:text-primary transition-colors group/link"
+                        >
+                          Learn More <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-2" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="text-center py-20 px-6 border-4 border-secondary/5 bg-muted/10 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 dot-grid w-64 h-64 opacity-10" />
+              <h3 className="text-3xl md:text-4xl font-black mb-12 tracking-tighter uppercase max-w-2xl mx-auto leading-tight">
+                Looking for a machine tailored to your production needs?
+              </h3>
+              <Button asChild size="lg" className="bg-primary text-white font-black rounded-none h-16 px-12 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-secondary transition-all duration-300">
+                <Link href="/products" className="flex items-center gap-3">
+                  View All Machines <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </motion.div>
           </div>
         </section>
 
@@ -208,26 +313,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Products Section */}
-        <section id="products" className="py-32 md:py-64 bg-white px-6 md:px-24">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-32">
-              <div className="max-w-3xl">
-                <motion.span className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground mb-8 block">Product Range</motion.span>
-                <motion.h2 className="text-7xl md:text-9xl font-black tracking-tighter leading-none uppercase">Systems</motion.h2>
-              </div>
-              <motion.p className="mt-12 md:mt-0 text-muted-foreground font-medium max-w-sm text-lg italic border-l-4 border-primary pl-8">
-                Performance-driven hardware built for 24/7 industrial cycles.
-              </motion.p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
-              {products.map((p) => (
-                <ProductCard key={p.id} {...p} />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Products Section (Legacy/Old) */}
+        {/* Note: I'm keeping this here but Our Machines is the new primary section */}
 
         {/* CTA Banner */}
         <section className="bg-primary py-48 md:py-72 px-6 md:px-24 relative overflow-hidden">

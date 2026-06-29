@@ -7,6 +7,30 @@
       "imageHint": "industrial machinery"
     },
     {
+      "id": "multihead-vffs",
+      "description": "Multi Head Weigher VFFS Machine",
+      "imageUrl": "https://picsum.photos/seed/rob22/800/600",
+      "imageHint": "packaging machine"
+    },
+    {
+      "id": "auger-vffs",
+      "description": "Auger VFFS Collar Packing Machine",
+      "imageUrl": "https://picsum.photos/seed/rob23/800/600",
+      "imageHint": "filling machine"
+    },
+    {
+      "id": "bottle-filling-line",
+      "description": "Automated bottle filling plant",
+      "imageUrl": "https://picsum.photos/seed/rob24/800/600",
+      "imageHint": "bottling line"
+    },
+    {
+      "id": "blending-machine",
+      "description": "Industrial blending equipment",
+      "imageUrl": "https://picsum.photos/seed/rob25/800/600",
+      "imageHint": "industrial mixer"
+    },
+    {
       "id": "liquid-filling",
       "description": "Liquid filling machine nozzles",
       "imageUrl": "https://picsum.photos/seed/rob2/600/400",
