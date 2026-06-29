@@ -269,7 +269,7 @@ export default function Home() {
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
               {machines.map((machine, idx) => (
                 <motion.div
                   key={machine.id}
@@ -324,22 +324,13 @@ export default function Home() {
               ))}
             </div>
 
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="text-center py-20 px-6 border-4 border-secondary/5 bg-muted/10 relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 dot-grid w-64 h-64 opacity-10" />
-              <h3 className="text-3xl md:text-4xl font-black mb-12 tracking-tighter uppercase max-w-2xl mx-auto leading-tight">
-                Looking for a machine tailored to your production needs?
-              </h3>
+            <div className="flex justify-center">
               <Button asChild size="lg" className="bg-primary text-white font-black rounded-none h-16 px-12 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-secondary transition-all duration-300">
                 <Link href="/products" className="flex items-center gap-3">
                   View All Machines <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
-            </motion.div>
+            </div>
           </div>
         </section>
 
