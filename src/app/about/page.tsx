@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -16,7 +15,6 @@ import {
   ShieldCheck, 
   Cpu, 
   Headset,
-  Quote,
   CheckCircle2
 } from 'lucide-react';
 import Image from 'next/image';
@@ -55,7 +53,7 @@ export default function AboutPage() {
     { 
       icon: Cpu, 
       title: "Solutions Over Catalogues", 
-      desc: "Most of our machines are custom-built. When a client's product doesn't fit a standard machine, we send an engineer to understand the problem firsthand — and build the right solution." 
+      desc: "When a client's product doesn't fit a standard machine, we send an engineer to understand the problem firsthand — and build the right solution." 
     },
     { 
       icon: Headset, 
@@ -244,8 +242,8 @@ export default function AboutPage() {
                   <p className="text-xl font-medium leading-relaxed text-secondary">
                     To build packaging machinery that manufacturers can rely on — completely. From the quality of the components to the support after delivery, SAM exists to give every client the machine they need and the team that stands behind it.
                   </p>
-                  <p className="text-sm font-black text-primary uppercase tracking-[0.2em]">
-                    Reliable machines. Genuine support. Every time.
+                  <p className="text-sm font-black text-primary tracking-[0.2em]">
+                    Reliable Machines. Genuine Support. Every Time.
                   </p>
                 </div>
               </motion.div>
@@ -266,8 +264,8 @@ export default function AboutPage() {
                   <p className="text-xl font-medium leading-relaxed text-white/80">
                     To be India's most trusted packaging machinery manufacturer — the name every buyer checks first and benchmarks against. To be the standard, not just an option.
                   </p>
-                  <p className="text-sm font-black text-primary uppercase tracking-[0.2em]">
-                    The benchmark, not just a choice.
+                  <p className="text-sm font-black text-primary tracking-[0.2em]">
+                    The Benchmark, Not Just a Choice.
                   </p>
                 </div>
               </motion.div>
