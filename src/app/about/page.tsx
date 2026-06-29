@@ -325,7 +325,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-16">
               <div className="lg:col-span-5">
                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">INFRASTRUCTURE</span>
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter">Our Manufacturing Facility</h2>
+                <h2 className="text-4xl md:text-[75px] font-black tracking-tighter leading-tight md:leading-[75px]">Our Manufacturing Facility</h2>
               </div>
               <div className="lg:col-span-7 space-y-6">
                 <p className="text-[17px] leading-[2rem] text-white/50 font-medium">
