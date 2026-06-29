@@ -16,7 +16,8 @@ import {
   ShieldCheck, 
   Cpu, 
   Headset,
-  Quote
+  Quote,
+  CheckCircle2
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -68,6 +69,13 @@ export default function AboutPage() {
     { id: 'infra-assembly', label: "Main Assembly Floor" },
     { id: 'infra-testing', label: "Quality Control Lab" },
     { id: 'hero-machinery', label: "Final Export Packaging" }
+  ];
+
+  const certifications = [
+    { title: "ISO Certified", desc: "Consistent quality management standards across all machines." },
+    { title: "CE Marked", desc: "EU safety and conformity requirements met — export-ready for European markets." },
+    { title: "GST Registered", desc: "Fully compliant for domestic supply across India." },
+    { title: "IE Code", desc: "Registered exporter of industrial machinery to global markets." }
   ];
 
   return (
@@ -357,29 +365,34 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 8. Certifications */}
-        <section className="py-24 bg-white px-6 md:px-24">
+        {/* 8. Certifications & Registrations */}
+        <section className="py-24 bg-white px-6 md:px-24 border-t border-border">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-24">
+            <div className="text-center mb-24 max-w-4xl mx-auto">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">QUALITY ASSURED</span>
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Certifications</h2>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-8">Certifications & Registrations</h2>
+              <p className="text-xl text-muted-foreground font-medium leading-relaxed">
+                SAM machines meet international quality and safety standards and are registered for both domestic supply and global export.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { title: "ISO 9001:2015", desc: "Quality Management System Certified" },
-                { title: "CE Certified", desc: "European Safety Standards Compliance" },
-                { title: "IE Code Registered", desc: "Import Export Code for Global Trade" },
-                { title: "Industry 4.0", desc: "Compliant with Modern Smart Factory Standards" }
-              ].map((cert, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {certifications.map((cert, idx) => (
                 <div key={idx} className="p-10 bg-muted/30 border-2 border-border flex flex-col items-center text-center group hover:border-primary transition-colors">
                   <div className="w-16 h-16 bg-white/5 border border-primary/20 flex items-center justify-center mb-6 rounded-full group-hover:bg-primary/10 transition-colors">
                     <Award className="w-8 h-8 text-primary" />
                   </div>
                   <h4 className="text-lg font-black uppercase tracking-tight mb-2">{cert.title}</h4>
-                  <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest">{cert.desc}</p>
+                  <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest leading-relaxed">{cert.desc}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="flex items-center justify-center gap-4 py-8 border-t border-border">
+              <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+              <p className="text-sm font-black uppercase tracking-widest text-secondary/60 text-center">
+                Additional certifications arranged on request to meet destination-country requirements for export orders.
+              </p>
             </div>
           </div>
         </section>
