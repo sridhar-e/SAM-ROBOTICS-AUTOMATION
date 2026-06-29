@@ -73,9 +73,9 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen selection:bg-primary selection:text-white bg-white">
       <Navbar />
 
-      <main className="flex-grow pt-24">
-        {/* 1. Header Section */}
-        <section className="relative h-[80vh] flex items-center overflow-hidden bg-secondary">
+      <main className="flex-grow">
+        {/* 1. Header Section - Adjusted padding to accommodate transparent Navbar */}
+        <section className="relative h-[90vh] flex items-center overflow-hidden bg-secondary pt-32">
           <div className="absolute inset-0 opacity-40">
             <Image 
               src={PlaceHolderImages.find(img => img.id === 'hero-machinery')?.imageUrl || ""}
@@ -110,7 +110,7 @@ export default function AboutPage() {
         </section>
 
         {/* 2. Our Story (Timeline) */}
-        <section className="py-24 px-6 md:px-24 bg-white relative">
+        <section className="py-16 px-6 md:px-24 bg-white relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">JOURNEY</span>
@@ -153,7 +153,7 @@ export default function AboutPage() {
         {/* 3. By the Numbers */}
         <section className="bg-secondary relative overflow-hidden">
           <div className="absolute inset-0 dot-grid opacity-10 pointer-events-none" />
-          <div className="max-w-7xl mx-auto py-24">
+          <div className="max-w-7xl mx-auto py-16">
              <div className="text-center mb-16 px-6">
                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">GLOBAL REACH</span>
                 <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase">By the Numbers</h2>
@@ -163,7 +163,7 @@ export default function AboutPage() {
         </section>
 
         {/* 4. Leadership */}
-        <section className="py-24 px-6 md:px-24 bg-white">
+        <section className="py-16 px-6 md:px-24 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">THE TEAM</span>
@@ -199,7 +199,7 @@ export default function AboutPage() {
         </section>
 
         {/* 5. Mission & Vision */}
-        <section className="py-24 bg-muted/30 px-6 md:px-24 border-y border-border">
+        <section className="py-16 bg-muted/30 px-6 md:px-24 border-y border-border">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <motion.div 
@@ -240,7 +240,7 @@ export default function AboutPage() {
         </section>
 
         {/* 6. What We Stand For */}
-        <section className="py-24 px-6 md:px-24 bg-white">
+        <section className="py-16 px-6 md:px-24 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">VALUES</span>
@@ -269,7 +269,7 @@ export default function AboutPage() {
         </section>
 
         {/* 7. Facility Section */}
-        <section className="py-24 bg-secondary text-white px-6 md:px-24 overflow-hidden">
+        <section className="py-16 bg-secondary text-white px-6 md:px-24 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div>
@@ -309,7 +309,7 @@ export default function AboutPage() {
         </section>
 
         {/* 8. Certifications */}
-        <section className="py-24 bg-white px-6 md:px-24">
+        <section className="py-16 bg-white px-6 md:px-24">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">QUALITY ASSURED</span>
@@ -334,7 +334,7 @@ export default function AboutPage() {
         </section>
 
         {/* 9. Clients - Logo Carousel */}
-        <section className="py-24 bg-white border-t border-border overflow-hidden">
+        <section className="py-16 bg-white border-t border-border overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
             <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">TRUSTED BY</span>
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">Leading Brands Worldwide</h2>
@@ -353,7 +353,7 @@ export default function AboutPage() {
         </section>
 
         {/* 10. Final CTA */}
-        <section className="relative py-32 bg-secondary overflow-hidden">
+        <section className="relative py-24 bg-secondary overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <Image 
                src={PlaceHolderImages.find(img => img.id === 'infra-assembly')?.imageUrl || ""}
