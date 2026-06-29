@@ -376,7 +376,7 @@ export default function Home() {
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {whyChooseFeatures.map((feature, idx) => (
                 <motion.div
                   key={idx}
@@ -398,25 +398,6 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto text-center py-20 border-y border-white/10"
-            >
-              <h3 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter uppercase leading-none text-white">
-                Ready to upgrade your production line?
-              </h3>
-              <p className="text-lg text-white/60 font-medium mb-12">
-                Speak with our engineering team to discuss your packaging requirements and discover the right automation solution.
-              </p>
-              <Button asChild size="lg" className="bg-primary text-white font-black rounded-none h-16 px-12 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-white hover:text-secondary transition-all duration-300">
-                <Link href="#contact" className="flex items-center gap-3">
-                  Consult With An Engineer <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-            </motion.div>
           </div>
         </section>
 
