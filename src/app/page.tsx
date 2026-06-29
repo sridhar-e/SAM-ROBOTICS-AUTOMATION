@@ -25,7 +25,8 @@ import {
   Globe,
   Handshake,
   Cpu,
-  CheckCircle2
+  CheckCircle2,
+  Quote
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -100,6 +101,17 @@ export default function Home() {
       icon: Handshake,
       title: "AMC & Long-Term Partnership",
       desc: "Annual Maintenance Contracts available. Spare parts stocked by part number. SAM is not a box-shifter — we build relationships that last as long as the machine does."
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Best place for high accuracy weighing machinery. Exceptional performance — 20 grams accuracy for 50 kg bag. Every bag saves a lot of money for me. Thank you Mr Senthil.",
+      author: "Quality Supervisor"
+    },
+    {
+      quote: "Purchased a packing machine and octagonal blender. Working super good. Best quality machine manufacturer in South India. Thanks Senthil and Arjun for guiding us.",
+      author: "Operations Manager"
     }
   ];
 
@@ -263,7 +275,7 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Bottom CTA */}
+            {/* Centered CTA */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -339,7 +351,6 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Bottom CTA Area */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -358,6 +369,56 @@ export default function Home() {
                 </Link>
               </Button>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Client Testimonials Section */}
+        <section id="testimonials" className="py-32 md:py-64 bg-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 dot-grid w-full h-full opacity-[0.01] -z-10" />
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-24">
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block"
+              >
+                CLIENT TESTIMONIALS
+              </motion.span>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl md:text-7xl font-black tracking-tighter leading-none uppercase mb-12"
+              >
+                What Our Clients Say
+              </motion.h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+              {testimonials.map((t, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.2 }}
+                  className="bg-muted/30 p-12 border border-border relative group hover:border-primary transition-all duration-500"
+                >
+                  <Quote className="absolute top-8 right-8 w-12 h-12 text-primary/10 group-hover:text-primary/20 transition-colors" />
+                  <p className="text-xl font-medium leading-relaxed text-foreground mb-10 italic">
+                    "{t.quote}"
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-1 bg-primary" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+                      {t.author}
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -453,12 +514,13 @@ export default function Home() {
           <div className="max-w-7xl mx-auto relative z-10 text-center">
              <div className="max-w-4xl mx-auto">
                 <h2 className="text-6xl md:text-9xl font-black text-white leading-[0.8] tracking-tighter mb-16 uppercase">
-                  Modernize <br />
-                  Operations.
+                  You’ve found your manufacturer. Let’s build your machine.
                 </h2>
                 <div className="flex flex-wrap justify-center gap-6">
                    <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-black rounded-none px-20 h-24 uppercase tracking-widest text-lg shadow-2xl">
-                    <Link href="#contact">Get Technical Review</Link>
+                    <Link href="#contact" className="flex items-center gap-3">
+                      Get a Quote <ArrowRight className="w-6 h-6" />
+                    </Link>
                   </Button>
                 </div>
              </div>
