@@ -3,11 +3,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Phone, MessageSquare, ArrowUpRight } from 'lucide-react';
+import { Phone, MessageSquare, ArrowUpRight, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
-export function Navbar() {
+interface NavbarProps {
+  variant?: 'light' | 'dark';
+}
+
+export function Navbar({ variant = 'light' }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -18,11 +22,15 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isDark = variant === 'dark';
+
   return (
     <nav
       className={cn(
         "fixed w-full top-0 z-50 transition-all duration-500 py-6 px-6 md:px-12 flex justify-between items-center",
-        scrolled ? "bg-secondary/95 backdrop-blur-md shadow-lg py-4 border-b border-white/5" : "bg-transparent"
+        scrolled 
+          ? "bg-white/95 backdrop-blur-md shadow-lg py-4 border-b border-black/5" 
+          : "bg-transparent"
       )}
     >
       <div className="flex items-center gap-3">
@@ -31,7 +39,10 @@ export function Navbar() {
             <div className="w-3 h-3 bg-white"></div>
           </div>
           <div className="flex flex-col -space-y-1">
-            <span className="text-lg font-black tracking-tighter uppercase text-white">
+            <span className={cn(
+              "text-lg font-black tracking-tighter uppercase",
+              scrolled || isDark ? "text-secondary" : "text-white"
+            )}>
               Sam Robotics
             </span>
             <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-primary">
@@ -41,26 +52,37 @@ export function Navbar() {
         </Link>
       </div>
 
-      <div className="hidden lg:flex gap-10 text-[10px] tracking-[0.2em] uppercase font-black items-center">
-        <Link href="/#products" className="text-white/60 hover:text-primary transition-all duration-300 relative group">
+      <div className={cn(
+        "hidden lg:flex gap-10 text-[10px] tracking-[0.2em] uppercase font-black items-center",
+        scrolled || isDark ? "text-secondary/60" : "text-white/60"
+      )}>
+        <Link href="/#our-machines" className="hover:text-primary transition-all duration-300 relative group">
           Products
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
         </Link>
-        <Link href="/about" className="text-white/60 hover:text-primary transition-all duration-300 relative group">
+        <Link href="/about" className="hover:text-primary transition-all duration-300 relative group">
           About
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
         </Link>
-        <Link href="/#infrastructure" className="text-white/60 hover:text-primary transition-all duration-300 relative group">
-          Infrastructure
+        <Link href="/#why-choose" className="hover:text-primary transition-all duration-300 relative group">
+          Why Us
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
         </Link>
-        <Link href="/#contact" className="text-white/60 hover:text-primary transition-all duration-300 relative group">
+        <Link href="/#contact" className="hover:text-primary transition-all duration-300 relative group">
           Contact
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
         </Link>
         
-        <div className="flex items-center gap-6 ml-4 pl-6 border-l border-white/10">
-          <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-none font-black h-10 px-6 text-[10px] tracking-widest uppercase transition-all duration-300">
+        <div className={cn(
+          "flex items-center gap-6 ml-4 pl-6 border-l",
+          scrolled || isDark ? "border-secondary/10" : "border-white/10"
+        )}>
+          <Button asChild variant="outline" className={cn(
+            "rounded-none font-black h-10 px-6 text-[10px] tracking-widest uppercase transition-all duration-300",
+            scrolled || isDark 
+              ? "border-primary text-primary hover:bg-primary hover:text-white" 
+              : "border-primary text-primary hover:bg-primary hover:text-white"
+          )}>
             <Link href="/#contact" className="flex items-center gap-2">
               Start Project <ArrowUpRight className="w-3 h-3" />
             </Link>
@@ -69,9 +91,10 @@ export function Navbar() {
       </div>
 
       <div className="lg:hidden">
-         <Button variant="ghost" size="icon" className="text-white">
-           <div className="w-6 h-0.5 bg-white mb-1.5" />
-           <div className="w-6 h-0.5 bg-white" />
+         <Button variant="ghost" size="icon" className={cn(
+           scrolled || isDark ? "text-secondary" : "text-white"
+         )}>
+           <Menu className="w-6 h-6" />
          </Button>
       </div>
     </nav>

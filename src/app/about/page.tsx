@@ -7,23 +7,18 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Stats } from '@/components/Stats';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { 
   ArrowRight, 
   Target, 
   Eye, 
   Award, 
-  Users, 
-  History, 
   ShieldCheck, 
   Lightbulb, 
-  Handshake, 
+  Users, 
   Zap, 
-  Search,
-  CheckCircle2,
-  Globe,
-  Briefcase
+  Search, 
+  Handshake
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -71,48 +66,59 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col min-h-screen selection:bg-primary selection:text-white bg-white">
-      <Navbar />
+      <Navbar variant="dark" />
 
       <main className="flex-grow">
-        {/* 1. Header Section */}
-        <section className="relative min-h-screen flex items-center overflow-hidden bg-secondary pt-48 pb-24">
-          <div className="absolute inset-0 opacity-40">
+        {/* 1. Header Section - Split Layout with Fade */}
+        <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
+          {/* Right Side Image with Fade Overlay */}
+          <div className="absolute inset-y-0 right-0 w-full lg:w-[60%] z-0">
             <Image 
               src="/About-Hero.webp"
               alt="Industrial Manufacturing"
               fill
-              className="object-cover"
+              className="object-cover object-center grayscale opacity-40 lg:opacity-100"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/80 to-transparent" />
+            {/* Linear Gradient for Fade Effect from White to Image */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 lg:via-white/40 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-10 lg:hidden" />
           </div>
-          <div className="absolute inset-0 grid-lines opacity-10" />
-          
-          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+
+          <div className="max-w-7xl mx-auto px-6 relative z-20 w-full pt-32 pb-20">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-5xl"
+              className="max-w-3xl"
             >
-              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">Packaging Machinery Manufacturer, Coimbatore — Founded 2020</span>
-              <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase mb-12">
-                Built on the Belief <br /> That a <span className="text-transparent stroke-white" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.4)' }}>Machine Is Only</span> <br /> as Good as the Team
+              <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-secondary leading-[0.9] tracking-tighter uppercase mb-10">
+                Built on the Belief <br /> That a Machine Is <br /> Only as Good as the <br /> 
+                <span className="text-primary italic">Team Behind It.</span>
               </h1>
-              <p className="text-xl text-white/60 font-medium mb-12 leading-relaxed max-w-3xl">
-                We started SAM in 2020 with one belief: that manufacturers deserve machinery built properly, installed properly, and supported properly. 5 years + and 2,000+ machines later, that's still the only standard we work to.
-              </p>
-              <Button asChild size="lg" className="bg-primary text-white font-black h-16 px-12 rounded-none text-xs tracking-widest uppercase">
-                <Link href="/products">Explore Our Machines <ArrowRight className="ml-3 w-4 h-4" /></Link>
+              
+              <div className="flex flex-col gap-6 mb-12">
+                <p className="text-sm font-black tracking-widest uppercase text-secondary/60">
+                  Packaging Machinery Manufacturer, Coimbatore — <span className="text-primary">Founded 2020</span>
+                </p>
+                <p className="text-xl text-secondary/60 font-medium leading-relaxed max-w-2xl">
+                  We started SAM in 2020 with one belief: that manufacturers deserve machinery built properly, installed properly, and supported properly. 5 years + and 2,000+ machines later, that's still the only standard we work to.
+                </p>
+              </div>
+
+              <Button asChild size="lg" className="bg-primary text-white font-black h-16 px-12 rounded-none text-xs tracking-widest uppercase hover:bg-secondary transition-colors shadow-2xl">
+                <Link href="/products" className="flex items-center gap-3">
+                  Explore Our Machines <ArrowRight className="w-4 h-4" />
+                </Link>
               </Button>
             </motion.div>
           </div>
         </section>
 
         {/* 2. Our Story (Timeline) */}
-        <section className="py-16 px-6 md:px-24 bg-white relative">
+        <section className="py-24 px-6 md:px-24 bg-white relative border-t border-border">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-24">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">JOURNEY</span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Our Story</h2>
             </div>
@@ -151,21 +157,12 @@ export default function AboutPage() {
         </section>
 
         {/* 3. By the Numbers */}
-        <section className="bg-secondary relative overflow-hidden">
-          <div className="absolute inset-0 dot-grid opacity-10 pointer-events-none" />
-          <div className="max-w-7xl mx-auto py-16">
-             <div className="text-center mb-16 px-6">
-                <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">GLOBAL REACH</span>
-                <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase">By the Numbers</h2>
-             </div>
-             <Stats />
-          </div>
-        </section>
+        <Stats />
 
         {/* 4. Leadership */}
-        <section className="py-16 px-6 md:px-24 bg-white">
+        <section className="py-24 px-6 md:px-24 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-24">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">THE TEAM</span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Leadership</h2>
             </div>
@@ -199,7 +196,7 @@ export default function AboutPage() {
         </section>
 
         {/* 5. Mission & Vision */}
-        <section className="py-16 bg-muted/30 px-6 md:px-24 border-y border-border">
+        <section className="py-24 bg-muted/30 px-6 md:px-24 border-y border-border">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <motion.div 
@@ -240,9 +237,9 @@ export default function AboutPage() {
         </section>
 
         {/* 6. What We Stand For */}
-        <section className="py-16 px-6 md:px-24 bg-white">
+        <section className="py-24 px-6 md:px-24 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-24">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">VALUES</span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">What We Stand For</h2>
             </div>
@@ -269,7 +266,7 @@ export default function AboutPage() {
         </section>
 
         {/* 7. Facility Section */}
-        <section className="py-16 bg-secondary text-white px-6 md:px-24 overflow-hidden">
+        <section className="py-24 bg-secondary text-white px-6 md:px-24 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div>
@@ -309,9 +306,9 @@ export default function AboutPage() {
         </section>
 
         {/* 8. Certifications */}
-        <section className="py-16 bg-white px-6 md:px-24">
+        <section className="py-24 bg-white px-6 md:px-24">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-24">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">QUALITY ASSURED</span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Certifications</h2>
             </div>
@@ -333,27 +330,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 9. Clients - Logo Carousel */}
-        <section className="py-16 bg-white border-t border-border overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">TRUSTED BY</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">Leading Brands Worldwide</h2>
-          </div>
-          
-          <div className="flex gap-16 animate-marquee whitespace-nowrap opacity-40 hover:opacity-100 transition-opacity">
-            {[...Array(10)].map((_, i) => (
-              <div key={i} className="flex items-center gap-16">
-                 <span className="text-4xl font-black uppercase tracking-tighter grayscale">ITC FOODS</span>
-                 <span className="text-4xl font-black uppercase tracking-tighter grayscale">HINDUSTAN FOODS</span>
-                 <span className="text-4xl font-black uppercase tracking-tighter grayscale">TVS MOTORS</span>
-                 <span className="text-4xl font-black uppercase tracking-tighter grayscale">BRITANNIA</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 10. Final CTA */}
-        <section className="relative py-24 bg-secondary overflow-hidden">
+        {/* 9. Final CTA */}
+        <section className="relative py-32 bg-secondary overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <Image 
                src={PlaceHolderImages.find(img => img.id === 'infra-assembly')?.imageUrl || ""}
@@ -378,7 +356,7 @@ export default function AboutPage() {
                   <Link href="/#contact">Get a Quote <ArrowRight className="ml-3 w-5 h-5" /></Link>
                </Button>
                <Button asChild variant="outline" size="lg" className="border-2 border-white/20 text-white font-black h-20 px-16 rounded-none text-sm tracking-widest uppercase bg-transparent hover:bg-white hover:text-secondary transition-all">
-                  <Link href="/products">View Catalogue</Link>
+                  <Link href="/#our-machines">View Catalogue</Link>
                </Button>
             </div>
           </div>
@@ -386,18 +364,6 @@ export default function AboutPage() {
       </main>
 
       <Footer />
-
-      <style jsx global>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          display: flex;
-          animation: marquee 30s linear infinite;
-          width: fit-content;
-        }
-      `}</style>
     </div>
   );
 }
