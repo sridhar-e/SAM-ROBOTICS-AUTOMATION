@@ -14,8 +14,8 @@ export function Stats() {
   ];
 
   return (
-    <section className="bg-secondary py-20 px-6 md:px-24 relative overflow-hidden">
-      <div className="absolute inset-0 dot-grid opacity-5" />
+    <section className="bg-primary py-20 px-6 md:px-24 relative overflow-hidden">
+      <div className="absolute inset-0 dot-grid opacity-10 invert" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {stats.map((stat, i) => (
@@ -27,13 +27,13 @@ export function Stats() {
               transition={{ delay: i * 0.1, duration: 0.8 }}
               className="flex flex-col items-start group"
             >
-              <div className="w-12 h-12 bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                <stat.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-500" />
+              <div className="w-12 h-12 bg-white/20 flex items-center justify-center mb-6 group-hover:bg-white transition-colors duration-500">
+                <stat.icon className="w-6 h-6 text-white group-hover:text-primary transition-colors duration-500" />
               </div>
               <span className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-2 block uppercase">
                 {stat.val}
               </span>
-              <span className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase leading-tight max-w-[120px]">
+              <span className="text-[10px] font-black tracking-[0.3em] text-white/90 uppercase leading-tight max-w-[120px]">
                 {stat.label}
               </span>
             </motion.div>
