@@ -501,7 +501,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32">
             <div>
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground mb-8 block">Partner with us</span>
-              <h2 className="text-5xl md:text-7xl font-black mb-20 tracking-tighter leading-[0.8] uppercase">
+              <h2 className="text-5xl md:text-[63px] font-black mb-20 tracking-tighter leading-[0.8] uppercase">
                 Ready to Build <br /> Your <span className="text-primary italic">Packing <br /> Line?</span>
               </h2>
               
@@ -512,8 +512,8 @@ export default function Home() {
                       <Box className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Tailored Proposal</h4>
-                      <p className="text-3xl font-black tracking-tight">Request a Quote</p>
+                      <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Request a Quote</h4>
+                      <p className="text-3xl font-black tracking-tight">Tailored Proposal</p>
                     </div>
                   </Link>
                   <div className="pl-[120px]">
