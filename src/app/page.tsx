@@ -501,7 +501,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32">
             <div>
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground mb-8 block">Partner with us</span>
-              <h2 className="text-5xl md:text-[63px] font-black mb-20 tracking-tighter leading-[0.8] uppercase">
+              <h2 className="text-5xl md:text-[63px] font-black mb-20 tracking-tighter leading-[0.8] md:leading-[65px] uppercase">
                 Ready to Build <br /> Your <span className="text-primary italic">Packing <br /> Line?</span>
               </h2>
               
