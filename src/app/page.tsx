@@ -646,6 +646,27 @@ export default function Home() {
               
               <div className="space-y-16">
                 <div className="flex flex-col gap-4">
+                  <Link href="#contact" className="flex items-center gap-10 group cursor-pointer">
+                    <div className="w-20 h-20 bg-primary flex items-center justify-center shrink-0 transition-all group-hover:bg-secondary">
+                      <Box className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Request a Quote</h4>
+                      <p className="text-3xl font-black tracking-tight">Tailored Proposal</p>
+                    </div>
+                  </Link>
+                  <div className="pl-[120px]">
+                    <p className="text-sm text-muted-foreground mb-2">Receive a tailored proposal within 24 hours.</p>
+                    <Link 
+                      href="#contact" 
+                      className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-primary hover:text-secondary transition-colors"
+                    >
+                      Get a Quote <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-4">
                   <a href="tel:+917397395665" className="flex items-center gap-10 group cursor-pointer">
                     <div className="w-20 h-20 bg-primary flex items-center justify-center shrink-0 transition-all group-hover:bg-secondary">
                       <Phone className="w-8 h-8 text-white" />
