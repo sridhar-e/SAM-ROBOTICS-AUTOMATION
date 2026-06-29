@@ -414,7 +414,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-8"
+              className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-[0.9] mb-8"
             >
               Work With a <br /> <span className="text-primary italic">Manufacturer That <br /> Stays Involved.</span>
             </motion.h2>
