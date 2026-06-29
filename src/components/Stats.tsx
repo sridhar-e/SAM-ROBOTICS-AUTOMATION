@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -15,14 +14,11 @@ export function Stats() {
   ];
 
   return (
-    <section className="bg-[#ff5842] py-24 px-6 md:px-24 relative overflow-hidden">
+    <section className="bg-[#ff5842] py-16 px-6 md:px-24 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
          <div className="dot-grid w-full h-full" />
       </div>
-      
-      {/* Subtle depth gradient for a modern feel */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(255,255,255,0.15)_0%,_transparent_60%)]" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-16 lg:gap-0">
