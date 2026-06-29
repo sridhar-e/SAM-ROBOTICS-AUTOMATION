@@ -56,21 +56,6 @@ export default function AboutPage() {
     { icon: Handshake, title: "Partnership", desc: "We don't just sell machines; we support your factory's growth." }
   ];
 
-  const leadership = [
-    {
-      name: "Senthil Kumar",
-      role: "Founder & CEO",
-      desc: "An engineering veteran with 25+ years of experience in automation and precision manufacturing.",
-      image: "https://picsum.photos/seed/leader1/400/400"
-    },
-    {
-      name: "Arjun Senthil",
-      role: "Operations Manager",
-      desc: "Spearheading global exports and ensuring seamless installation and service delivery worldwide.",
-      image: "https://picsum.photos/seed/leader2/400/400"
-    }
-  ];
-
   const facilityImages = [
     { id: 'infra-design', label: "Engineering Design Center" },
     { id: 'infra-assembly', label: "Main Assembly Floor" },
@@ -83,9 +68,8 @@ export default function AboutPage() {
       <Navbar variant="dark" />
 
       <main className="flex-grow">
-        {/* 1. Header Section - Split Layout with Fade */}
-        <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
-          {/* Right Side Image with Fade Overlay */}
+        {/* 1. Header Section */}
+        <section className="relative min-h-screen flex items-center bg-white overflow-hidden pt-32 pb-20">
           <div className="absolute inset-y-0 right-0 w-full lg:w-[60%] z-0">
             <Image 
               src="/About-Hero.webp"
@@ -94,12 +78,11 @@ export default function AboutPage() {
               className="object-cover object-center grayscale opacity-40 lg:opacity-100"
               priority
             />
-            {/* Linear Gradient for Fade Effect from White to Image */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 lg:via-white/40 to-transparent z-10" />
             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-10 lg:hidden" />
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 relative z-20 w-full pt-32 pb-20">
+          <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -139,7 +122,6 @@ export default function AboutPage() {
             </div>
 
             <div className="relative">
-              {/* Vertical Line for Desktop */}
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
               
               <div className="space-y-12 md:space-y-0 relative">
@@ -177,38 +159,64 @@ export default function AboutPage() {
         {/* 3. By the Numbers */}
         <Stats />
 
-        {/* 4. Leadership */}
-        <section className="py-24 px-6 md:px-24 bg-white">
+        {/* 4. Leadership - Premium Split Layout */}
+        <section className="py-24 px-6 md:px-24 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-24">
-              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">THE TEAM</span>
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Leadership</h2>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+              {/* Left Side: Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative aspect-[4/5] lg:aspect-square bg-muted grayscale hover:grayscale-0 transition-all duration-700"
+              >
+                <Image 
+                  src="https://picsum.photos/seed/senthil/800/1000"
+                  alt="Senthilmani Muthuramalingam"
+                  fill
+                  className="object-cover"
+                  data-ai-hint="professional portrait"
+                />
+                <div className="absolute inset-0 border-[20px] border-white/10 m-6 pointer-events-none" />
+              </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-              {leadership.map((leader, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  className="group"
-                >
-                  <div className="relative aspect-square overflow-hidden bg-muted mb-8 grayscale hover:grayscale-0 transition-all duration-700">
-                    <Image 
-                      src={leader.image}
-                      alt={leader.name}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      data-ai-hint="portrait"
-                    />
-                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <h3 className="text-3xl font-black uppercase tracking-tighter mb-2">{leader.name}</h3>
-                  <p className="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-6">{leader.role}</p>
-                  <p className="text-muted-foreground font-medium leading-relaxed max-w-md">{leader.desc}</p>
-                </motion.div>
-              ))}
+              {/* Right Side: Content */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-6 block">LEADERSHIP</span>
+                <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4 leading-none">
+                  Senthilmani Muthuramalingam
+                </h2>
+                <p className="text-primary text-xs font-black uppercase tracking-[0.2em] mb-12">
+                  Founder & CEO, SAM Robotics & Automation
+                </p>
+
+                <div className="space-y-8 text-lg font-medium text-muted-foreground leading-relaxed">
+                  <p>
+                    Senthil founded SAM Robotics in 2020, drawing on 15 years of hands-on experience as a field service engineer across South India's industrial sector. Having serviced machinery in hundreds of factories — and having seen firsthand the gap between what manufacturers needed and what the market offered — he built SAM to close it.
+                  </p>
+                  <p>
+                    Today, Senthil leads the engineering and client relationship work at SAM — ensuring that every custom build, every installation, and every after-sales commitment reflects the quality standard SAM was built on.
+                  </p>
+                </div>
+
+                <div className="mt-16 pt-12 border-t border-border flex flex-col sm:flex-row items-start sm:items-center gap-12">
+                   <div>
+                     <span className="text-4xl font-black text-secondary block mb-1">15+</span>
+                     <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Years Field Experience</span>
+                   </div>
+                   <div className="w-px h-12 bg-border hidden sm:block" />
+                   <div>
+                     <span className="text-4xl font-black text-secondary block mb-1">2020</span>
+                     <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Year Founded</span>
+                   </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
