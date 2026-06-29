@@ -344,8 +344,8 @@ export default function Home() {
         </section>
 
         {/* Why Choose Section */}
-        <section id="why-choose" className="py-32 md:py-64 bg-muted/20 relative overflow-hidden">
-          <div className="absolute top-0 right-0 dot-grid w-1/3 h-full opacity-[0.03] -z-10" />
+        <section id="why-choose" className="py-32 md:py-64 bg-[#0f0f0f] text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 dot-grid w-1/3 h-full opacity-[0.03] invert -z-10" />
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-24">
               <motion.span 
@@ -361,7 +361,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-7xl font-black tracking-tighter leading-none uppercase mb-12"
+                className="text-5xl md:text-7xl font-black tracking-tighter leading-none uppercase mb-12 text-white"
               >
                 Why Manufacturers Choose SAM
               </motion.h2>
@@ -370,7 +370,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="max-w-2xl mx-auto text-xl text-muted-foreground font-medium"
+                className="max-w-2xl mx-auto text-xl text-white/60 font-medium"
               >
                 The packing machinery market has many options. Here's what sets SAM apart.
               </motion.p>
@@ -384,15 +384,15 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white p-12 border border-border group hover:border-primary hover:shadow-xl transition-all duration-500 flex flex-col h-full"
+                  className="bg-white/[0.03] p-12 border border-white/10 group hover:border-primary hover:bg-white/[0.05] transition-all duration-500 flex flex-col h-full"
                 >
-                  <div className="w-16 h-16 bg-muted flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500">
-                    <feature.icon className="w-8 h-8 text-secondary group-hover:text-white transition-colors duration-500" />
+                  <div className="w-16 h-16 bg-white/5 flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500">
+                    <feature.icon className="w-8 h-8 text-white/80 group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="text-xl font-black mb-6 tracking-tight uppercase leading-tight group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-black mb-6 tracking-tight uppercase leading-tight text-white group-hover:text-primary transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm font-medium leading-relaxed">
+                  <p className="text-white/40 text-sm font-medium leading-relaxed">
                     {feature.desc}
                   </p>
                 </motion.div>
@@ -403,15 +403,15 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="max-w-4xl mx-auto text-center py-20 border-y border-border"
+              className="max-w-4xl mx-auto text-center py-20 border-y border-white/10"
             >
-              <h3 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter uppercase leading-none">
+              <h3 className="text-3xl md:text-5xl font-black mb-8 tracking-tighter uppercase leading-none text-white">
                 Ready to upgrade your production line?
               </h3>
-              <p className="text-lg text-muted-foreground font-medium mb-12">
+              <p className="text-lg text-white/60 font-medium mb-12">
                 Speak with our engineering team to discuss your packaging requirements and discover the right automation solution.
               </p>
-              <Button asChild size="lg" className="bg-secondary text-white font-black rounded-none h-16 px-12 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-primary transition-all duration-300">
+              <Button asChild size="lg" className="bg-primary text-white font-black rounded-none h-16 px-12 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-white hover:text-secondary transition-all duration-300">
                 <Link href="#contact" className="flex items-center gap-3">
                   Consult With An Engineer <ArrowRight className="w-4 h-4" />
                 </Link>
