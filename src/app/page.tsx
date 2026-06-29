@@ -654,15 +654,15 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-10 group cursor-pointer">
+                <a href="mailto:ceo@samgoc.com" className="flex items-center gap-10 group cursor-pointer">
                   <div className="w-20 h-20 bg-primary flex items-center justify-center shrink-0 transition-all group-hover:bg-secondary">
                     <MailIcon className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Project Inquiries</h4>
-                    <p className="text-3xl font-black tracking-tight">info@samrobotics.com</p>
+                    <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Email</h4>
+                    <p className="text-3xl font-black tracking-tight">ceo@samgoc.com</p>
                   </div>
-                </div>
+                </a>
               </div>
 
               <div className="mt-24 p-12 border-4 border-secondary/5 bg-muted/20 relative">
