@@ -2,10 +2,9 @@
 "use client";
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { ProductCard } from '@/components/ProductCard';
 import { InquiryForm } from '@/components/InquiryForm';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
@@ -31,9 +30,10 @@ import {
   Globe,
   Handshake,
   Cpu,
-  CheckCircle2,
   Quote,
-  HelpCircle
+  MessageSquare,
+  Mail as MailIcon,
+  PhoneCall
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -323,7 +323,6 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Centered CTA */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -493,118 +492,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Mission Section / Engineering Philosophy */}
-        <section id="intro" className="py-32 md:py-64 px-6 md:px-24 max-w-7xl mx-auto relative">
-          <div className="absolute top-0 right-0 dot-grid w-96 h-96 -z-10" />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="relative"
-            >
-              <div className="relative w-full aspect-square bg-muted">
-                <div className="absolute -inset-8 border border-primary/20 -z-10 translate-x-4 translate-y-4" />
-                <div className="absolute -inset-8 border border-secondary/10 -z-20 -translate-x-4 -translate-y-4" />
-                <div className="w-full h-full bg-secondary flex items-center justify-center">
-                   <Factory className="w-40 h-40 text-white opacity-10" />
-                   <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-9xl font-black text-white/5 tracking-tighter">15YRS</span>
-                   </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-10 block">Engineering Philosophy</span>
-              <h2 className="text-6xl md:text-8xl font-black mb-12 leading-[0.85] tracking-tighter uppercase">
-                Modular <br />
-                <span className="text-primary italic">Systems.</span>
-              </h2>
-              <p className="text-xl text-muted-foreground font-medium mb-12 leading-relaxed max-w-lg">
-                We believe in automation that scales. Our machines are designed with a modular architecture, allowing you to expand your production lines as your demand grows.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-16 pt-12 border-t border-border font-mono">
-                <div>
-                  <h4 className="text-5xl font-black mb-2 tracking-tighter">99.8%</h4>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Uptime Record</p>
-                </div>
-                <div>
-                  <h4 className="text-5xl font-black mb-2 tracking-tighter">24HR</h4>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Tech Support</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Process Section */}
-        <section id="process" className="py-32 md:py-64 bg-secondary text-white px-6 md:px-24">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-32">
-              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">Execution Framework</span>
-              <h2 className="text-6xl md:text-9xl font-black tracking-tighter leading-none">PROCESS</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
-              {[
-                { icon: Briefcase, step: "01", title: "Consultation", desc: "Analyzing your production goals and site constraints." },
-                { icon: Microscope, step: "02", title: "Engineering", desc: "Custom CAD design and electrical mapping of systems." },
-                { icon: Wrench, step: "03", title: "Fabrication", desc: "Precision assembly and in-house FAT protocols." },
-                { icon: Box, step: "04", title: "Commissioning", desc: "On-site installation and operator training." }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-secondary p-12 group hover:bg-primary transition-all duration-500">
-                  <span className="text-5xl font-black text-white/10 group-hover:text-white/20 transition-colors mb-12 block font-mono">{item.step}</span>
-                  <item.icon className="w-10 h-10 text-primary group-hover:text-white mb-10 transition-colors" />
-                  <h3 className="text-2xl font-black mb-6 uppercase tracking-tight">{item.title}</h3>
-                  <p className="text-white/40 text-sm font-medium group-hover:text-white/80 transition-colors leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Infrastructure Section */}
-        <section id="infrastructure" className="py-32 md:py-64 px-6 md:px-24 bg-muted/30">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-32 flex justify-between items-end">
-              <div>
-                <span className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground mb-8 block">Manufacturing</span>
-                <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-none uppercase">Facilities</h2>
-              </div>
-              <p className="max-w-xs text-xs font-bold uppercase tracking-widest text-muted-foreground text-right hidden md:block">
-                ISO 9001:2015 Certified Production Center
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              {[
-                { icon: ShieldCheck, title: "Precision Design", desc: "CAD/CAM specialized teams for custom hardware adaptation." },
-                { icon: Zap, title: "Assembly Floor", desc: "Lean manufacturing setup for streamlined unit fabrication." },
-                { icon: Factory, title: "FAT Lab", desc: "Rigorous stress testing in controlled industrial environments." }
-              ].map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  className="bg-white p-16 border border-border group hover:border-primary hover:shadow-2xl transition-all duration-500 relative"
-                >
-                  <div className="w-20 h-20 bg-muted flex items-center justify-center mb-12 group-hover:bg-secondary transition-colors duration-500">
-                    <item.icon className="w-10 h-10 group-hover:text-primary transition-colors duration-500" />
-                  </div>
-                  <h3 className="text-2xl font-black mb-6 tracking-tight uppercase">{item.title}</h3>
-                  <p className="text-muted-foreground text-base font-medium leading-relaxed">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FAQ Section */}
         <section id="faq" className="py-32 md:py-64 px-6 md:px-24 bg-white relative overflow-hidden">
           <div className="absolute top-0 left-0 dot-grid w-full h-full opacity-[0.02] -z-10" />
@@ -655,6 +542,93 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Final CTA Section */}
+        <section id="final-cta" className="py-32 md:py-64 bg-secondary text-white relative overflow-hidden">
+          <div className="absolute inset-0 dot-grid opacity-[0.05] -z-10" />
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-24">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="lg:col-span-7"
+              >
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] mb-10">
+                  Ready to Build Your <span className="text-primary italic">Packing Line?</span>
+                </h2>
+                <p className="text-xl md:text-2xl text-white/50 font-medium leading-relaxed max-w-2xl">
+                  Tell us your product, your production volume, and your timeline. Our engineers will recommend the right machine — and stand behind it.
+                </p>
+              </motion.div>
+              
+              <div className="lg:col-span-5 hidden lg:block">
+                <div className="w-full h-[1px] bg-white/10" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Request a Quote Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white/5 p-12 border border-white/10 group hover:bg-primary transition-all duration-500"
+              >
+                <div className="w-16 h-16 bg-white/5 flex items-center justify-center mb-10 group-hover:bg-white/20 transition-colors">
+                  <Box className="w-8 h-8 text-primary group-hover:text-white" />
+                </div>
+                <h3 className="text-2xl font-black mb-4 uppercase tracking-tight">Request a Quote</h3>
+                <p className="text-white/40 text-sm mb-10 group-hover:text-white/80 transition-colors">
+                  Receive a tailored proposal within 24 hours.
+                </p>
+                <Link href="#contact" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform">
+                  Get a Quote <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+
+              {/* WhatsApp Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="bg-white/5 p-12 border border-white/10 group hover:bg-primary transition-all duration-500"
+              >
+                <div className="w-16 h-16 bg-white/5 flex items-center justify-center mb-10 group-hover:bg-white/20 transition-colors">
+                  <MessageSquare className="w-8 h-8 text-primary group-hover:text-white" />
+                </div>
+                <h3 className="text-2xl font-black mb-4 uppercase tracking-tight">WhatsApp Us</h3>
+                <p className="text-white/40 text-sm mb-10 group-hover:text-white/80 transition-colors">
+                  +91 739 739 5665
+                </p>
+                <a href="https://wa.me/917397395665" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform">
+                  Chat Now <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+
+              {/* Email Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="bg-white/5 p-12 border border-white/10 group hover:bg-primary transition-all duration-500"
+              >
+                <div className="w-16 h-16 bg-white/5 flex items-center justify-center mb-10 group-hover:bg-white/20 transition-colors">
+                  <MailIcon className="w-8 h-8 text-primary group-hover:text-white" />
+                </div>
+                <h3 className="text-2xl font-black mb-4 uppercase tracking-tight">Email Us</h3>
+                <p className="text-white/40 text-sm mb-10 group-hover:text-white/80 transition-colors">
+                  ceo@samgoc.com
+                </p>
+                <a href="mailto:ceo@samgoc.com" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] group-hover:translate-x-2 transition-transform">
+                  Send Email <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="py-32 md:py-64 px-6 md:px-24 bg-white border-t border-border relative">
           <div className="absolute bottom-0 right-0 dot-grid w-1/2 h-full -z-10 opacity-[0.03]" />
@@ -668,7 +642,7 @@ export default function Home() {
               <div className="space-y-16">
                 <div className="flex items-center gap-10 group cursor-pointer">
                   <div className="w-20 h-20 bg-primary flex items-center justify-center shrink-0 transition-all group-hover:bg-secondary">
-                    <Phone className="w-8 h-8 text-white" />
+                    <PhoneCall className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Technical Sales</h4>
@@ -678,7 +652,7 @@ export default function Home() {
                 
                 <div className="flex items-center gap-10 group cursor-pointer">
                   <div className="w-20 h-20 bg-primary flex items-center justify-center shrink-0 transition-all group-hover:bg-secondary">
-                    <Mail className="w-8 h-8 text-white" />
+                    <MailIcon className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">Project Inquiries</h4>
@@ -711,16 +685,3 @@ export default function Home() {
     </div>
   );
 }
-
-const Phone = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-  </svg>
-);
-
-const Mail = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect width="20" height="16" x="2" y="4" rx="2" />
-    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-  </svg>
-);
