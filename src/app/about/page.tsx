@@ -323,12 +323,12 @@ export default function AboutPage() {
         {/* 7. Facility Section */}
         <section className="py-24 bg-secondary text-white px-6 md:px-24 overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-12">
-              <div className="shrink-0">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-16">
+              <div className="lg:col-span-5">
                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">INFRASTRUCTURE</span>
-                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Our Manufacturing Facility</h2>
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter">Our Manufacturing Facility</h2>
               </div>
-              <div className="max-w-3xl space-y-6">
+              <div className="lg:col-span-7 space-y-6">
                 <p className="text-white font-medium text-lg leading-relaxed">
                   SAM operates a 5,000 sq ft manufacturing facility in Madukkarai, Coimbatore — housing the full range of fabrication, machining, welding, and assembly capabilities needed to build every machine in-house.
                 </p>
