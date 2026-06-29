@@ -420,18 +420,23 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Bottom CTA in Testimonials Section */}
+            {/* Bottom CTA in Testimonials Section - Card Layout */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center py-20 px-6 border-y border-border max-w-5xl mx-auto"
+              className="max-w-5xl mx-auto bg-secondary text-white p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 group relative overflow-hidden"
             >
-              <h3 className="text-4xl md:text-6xl font-black mb-12 tracking-tighter uppercase leading-[0.9] max-w-3xl mx-auto">
-                You’ve found your manufacturer. <br />
-                <span className="text-primary">Let’s build your machine.</span>
-              </h3>
-              <Button asChild size="lg" className="bg-primary text-white font-black rounded-none h-20 px-16 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-secondary transition-all duration-300">
+              <div className="absolute top-0 right-0 dot-grid w-64 h-64 opacity-10" />
+              <div className="text-left relative z-10">
+                <h3 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-[0.9] mb-4">
+                  You’ve found your <br className="hidden md:block" /> manufacturer.
+                </h3>
+                <p className="text-primary text-xl md:text-2xl font-black uppercase tracking-tighter">
+                  Let’s build your machine.
+                </p>
+              </div>
+              <Button asChild size="lg" className="bg-primary text-white font-black rounded-none h-20 px-12 md:px-16 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-white hover:text-secondary transition-all duration-300 shrink-0 relative z-10">
                 <Link href="#contact" className="flex items-center gap-3">
                   Get a Quote <ArrowRight className="w-5 h-5" />
                 </Link>
