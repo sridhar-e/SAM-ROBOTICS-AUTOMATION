@@ -328,10 +328,10 @@ export default function AboutPage() {
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter">Our Manufacturing Facility</h2>
               </div>
               <div className="lg:col-span-7 space-y-6">
-                <p className="text-white font-medium text-lg leading-relaxed">
+                <p className="text-[17px] leading-[2rem] text-white/50 font-medium">
                   SAM operates a 5,000 sq ft manufacturing facility in Madukkarai, Coimbatore — housing the full range of fabrication, machining, welding, and assembly capabilities needed to build every machine in-house.
                 </p>
-                <p className="text-white/50 text-sm font-medium leading-relaxed">
+                <p className="text-[17px] leading-[2rem] text-white/50 font-medium">
                   Building entirely in-house means we control quality at every stage, respond faster to custom requirements, and stand behind every finished machine completely. Our facility handles TIG, MIG, ARC, and spot welding; CNC and VMC machining; laser cutting; sheet rolling and bending; PLC programming; and full assembly and pre-dispatch testing — all under one roof in Coimbatore.
                 </p>
               </div>
