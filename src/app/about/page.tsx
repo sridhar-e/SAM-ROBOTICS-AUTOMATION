@@ -30,11 +30,11 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   const timeline = [
-    { year: "2012", title: "Company Founded", desc: "Started with a vision to revolutionize the South Indian packaging market from Coimbatore." },
-    { year: "2014", title: "First Machine Delivered", desc: "Successfully installed our first high-accuracy VFFS machine for a major snack manufacturer." },
-    { year: "2017", title: "Expansion into Export", desc: "Successfully shipped our first overseas order to the UAE, marking our global entry." },
-    { year: "2019", title: "ISO & CE Certification", desc: "Achieved international quality benchmarks, enabling entry into European and US markets." },
-    { year: "2022", title: "25+ Countries Served", desc: "Established a strong presence across 4 continents with over 500+ happy global clients." },
+    { year: "2020", title: "Company Founded", desc: "Started with a vision to revolutionize the packaging market with engineering integrity from Coimbatore." },
+    { year: "2021", title: "First Machine Delivered", desc: "Successfully installed our first high-accuracy VFFS machine for a major food manufacturer." },
+    { year: "2022", title: "Expansion into Export", desc: "Successfully shipped our first overseas order, marking our entry into the global market." },
+    { year: "2023", title: "ISO & CE Certification", desc: "Achieved international quality benchmarks, enabling entry into European and US markets." },
+    { year: "2024", title: "25+ Countries Served", desc: "Established a strong presence across 4 continents with over 500+ happy global clients." },
     { year: "2025", title: "Industry 4.0 Integration", desc: "Launching smart-enabled machinery with remote diagnostics and AI-driven efficiency." }
   ];
 
@@ -74,7 +74,7 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* 1. Header Section - Adjusted height and padding to prevent overlap with Navbar */}
+        {/* 1. Header Section */}
         <section className="relative min-h-screen flex items-center overflow-hidden bg-secondary pt-48 pb-24">
           <div className="absolute inset-0 opacity-40">
             <Image 
@@ -93,14 +93,14 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl"
+              className="max-w-5xl"
             >
-              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">About SAM</span>
+              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">Packaging Machinery Manufacturer, Coimbatore — Founded 2020</span>
               <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase mb-12">
-                Engineering <br /> <span className="text-transparent stroke-white" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.4)' }}>Packaging Automation</span> <br /> Since Day One
+                Built on the Belief <br /> That a <span className="text-transparent stroke-white" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.4)' }}>Machine Is Only</span> <br /> as Good as the Team
               </h1>
-              <p className="text-xl text-white/60 font-medium mb-12 leading-relaxed max-w-2xl">
-                A trusted packaging machine manufacturer from Coimbatore serving factories across India and 25+ countries worldwide.
+              <p className="text-xl text-white/60 font-medium mb-12 leading-relaxed max-w-3xl">
+                We started SAM in 2020 with one belief: that manufacturers deserve machinery built properly, installed properly, and supported properly. 5 years + and 2,000+ machines later, that's still the only standard we work to.
               </p>
               <Button asChild size="lg" className="bg-primary text-white font-black h-16 px-12 rounded-none text-xs tracking-widest uppercase">
                 <Link href="/products">Explore Our Machines <ArrowRight className="ml-3 w-4 h-4" /></Link>
