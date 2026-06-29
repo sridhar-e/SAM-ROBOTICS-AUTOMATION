@@ -400,7 +400,7 @@ export default function AboutPage() {
         <section className="relative py-32 bg-secondary overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <Image 
-               src={PlaceHolderImages.find(img => img.id === 'infra-assembly')?.imageUrl || ""}
+               src="/About-CTA.webp"
                alt="Factory"
                fill
                className="object-cover"
