@@ -173,7 +173,7 @@ export default function Home() {
         <Hero />
 
         {/* Who We Are Section */}
-        <section id="who-we-are" className="py-16 md:py-24 bg-white relative overflow-hidden">
+        <section id="who-we-are" className="py-12 md:py-16 bg-white relative overflow-hidden">
           <div className="absolute top-0 right-0 dot-grid w-1/3 h-full opacity-[0.03] -z-10" />
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
@@ -199,10 +199,10 @@ export default function Home() {
                 className="lg:col-span-7"
               >
                 <div className="space-y-8">
-                  <p className="text-xl md:text-2xl font-medium leading-relaxed text-foreground">
+                  <p className="text-[19px] leading-[2rem] text-[#0f0f0f] font-medium">
                     SAM Robotics & Automation is an automatic packing machine manufacturer built in Coimbatore — trusted by factories across India and in 25+ countries. 
                   </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-[19px] leading-[2rem] text-[#0f0f0f]">
                     We are a custom packaging machine manufacturer: every machine is engineered to your product, your speed, and your production floor — not pulled from a catalogue. Our commitment to bespoke engineering ensures that your production line is optimized for your specific operational needs.
                   </p>
                   
@@ -220,10 +220,10 @@ export default function Home() {
         </section>
 
         {/* Our Machines Section */}
-        <section id="our-machines" className="py-16 md:py-24 bg-white relative overflow-hidden">
+        <section id="our-machines" className="py-12 md:py-16 bg-white relative overflow-hidden">
           <div className="absolute top-0 left-0 dot-grid w-full h-full opacity-[0.02] -z-10" />
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16 md:mb-24">
+            <div className="text-center mb-12">
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -252,7 +252,7 @@ export default function Home() {
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
               {machines.map((machine, idx) => (
                 <motion.div
                   key={machine.id}
@@ -318,10 +318,10 @@ export default function Home() {
         </section>
 
         {/* Why Choose Section */}
-        <section id="why-choose" className="py-16 md:py-24 bg-[#0f0f0f] text-white relative overflow-hidden">
+        <section id="why-choose" className="py-12 md:py-16 bg-[#0f0f0f] text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 dot-grid w-1/3 h-full opacity-[0.03] invert -z-10" />
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16 md:mb-24">
+            <div className="text-center mb-16">
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -376,10 +376,10 @@ export default function Home() {
         </section>
 
         {/* Client Testimonials Section */}
-        <section id="testimonials" className="py-16 md:py-24 bg-white relative overflow-hidden">
+        <section id="testimonials" className="py-12 md:py-16 bg-white relative overflow-hidden">
           <div className="absolute top-0 left-0 dot-grid w-full h-full opacity-[0.01] -z-10" />
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16 md:mb-24">
+            <div className="text-center mb-16">
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -399,7 +399,7 @@ export default function Home() {
               </motion.h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-20 md:mb-32">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16 md:mb-24">
               {testimonials.map((t, idx) => (
                 <motion.div
                   key={idx}
@@ -449,10 +449,10 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="py-16 md:py-24 px-6 md:px-24 bg-white relative overflow-hidden">
+        <section id="faq" className="py-12 md:py-16 px-6 md:px-24 bg-white relative overflow-hidden">
           <div className="absolute top-0 left-0 dot-grid w-full h-full opacity-[0.02] -z-10" />
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16 md:mb-24">
+            <div className="text-center mb-16">
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -499,7 +499,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 md:py-24 px-6 md:px-24 bg-white border-t border-border relative">
+        <section id="contact" className="py-12 md:py-16 px-6 md:px-24 bg-white border-t border-border relative">
           <div className="absolute bottom-0 right-0 dot-grid w-1/2 h-full -z-10 opacity-[0.03]" />
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32">
             <div>
