@@ -26,14 +26,15 @@ import {
   Microscope, 
   Briefcase, 
   Landmark, 
-  Headset,
-  Globe,
-  Handshake,
-  Cpu,
-  Quote,
-  MessageSquare,
-  Mail as MailIcon,
-  PhoneCall
+  Headset, 
+  Globe, 
+  Handshake, 
+  Cpu, 
+  Quote, 
+  MessageSquare, 
+  Mail as MailIcon, 
+  PhoneCall,
+  Phone
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -647,7 +648,7 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <a href="tel:+917397395665" className="flex items-center gap-10 group cursor-pointer">
                     <div className="w-20 h-20 bg-primary flex items-center justify-center shrink-0 transition-all group-hover:bg-secondary">
-                      <MessageSquare className="w-8 h-8 text-white" />
+                      <Phone className="w-8 h-8 text-white" />
                     </div>
                     <div>
                       <h4 className="font-black uppercase text-[10px] tracking-widest text-muted-foreground mb-2">WhatsApp</h4>
