@@ -80,7 +80,7 @@ export default function Home() {
                 className="lg:col-span-5"
               >
                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">Who We Are</span>
-                <h2 className="text-5xl md:text-7xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
+                <h2 className="text-4xl md:text-6xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
                   The Manufacturer India's Growing <span className="text-primary italic">Factories</span> Are Switching To
                 </h2>
                 <div className="w-24 h-2 bg-secondary mb-12" />
