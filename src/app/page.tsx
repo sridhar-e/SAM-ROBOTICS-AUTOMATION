@@ -396,7 +396,7 @@ export default function Home() {
               </motion.h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-32">
               {testimonials.map((t, idx) => (
                 <motion.div
                   key={idx}
@@ -419,6 +419,24 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Bottom CTA in Testimonials Section */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center py-20 px-6 border-y border-border max-w-5xl mx-auto"
+            >
+              <h3 className="text-4xl md:text-6xl font-black mb-12 tracking-tighter uppercase leading-[0.9] max-w-3xl mx-auto">
+                You’ve found your manufacturer. <br />
+                <span className="text-primary">Let’s build your machine.</span>
+              </h3>
+              <Button asChild size="lg" className="bg-primary text-white font-black rounded-none h-20 px-16 uppercase tracking-[0.2em] text-sm shadow-xl hover:bg-secondary transition-all duration-300">
+                <Link href="#contact" className="flex items-center gap-3">
+                  Get a Quote <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
+            </motion.div>
           </div>
         </section>
 
@@ -497,33 +515,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* CTA Banner */}
-        <section className="bg-primary py-48 md:py-72 px-6 md:px-24 relative overflow-hidden">
-          <div className="absolute inset-0 dot-grid opacity-20" />
-          <motion.div 
-            animate={{ x: ['100%', '-100%'] }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="absolute top-1/2 -translate-y-1/2 left-0 whitespace-nowrap text-[25rem] font-black text-white/5 pointer-events-none select-none"
-          >
-            MODULAR • SCALABLE • PRECISE • MODULAR • SCALABLE • PRECISE •
-          </motion.div>
-          
-          <div className="max-w-7xl mx-auto relative z-10 text-center">
-             <div className="max-w-4xl mx-auto">
-                <h2 className="text-6xl md:text-9xl font-black text-white leading-[0.8] tracking-tighter mb-16 uppercase">
-                  You’ve found your manufacturer. Let’s build your machine.
-                </h2>
-                <div className="flex flex-wrap justify-center gap-6">
-                   <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-black rounded-none px-20 h-24 uppercase tracking-widest text-lg shadow-2xl">
-                    <Link href="#contact" className="flex items-center gap-3">
-                      Get a Quote <ArrowRight className="w-6 h-6" />
-                    </Link>
-                  </Button>
-                </div>
-             </div>
           </div>
         </section>
 
