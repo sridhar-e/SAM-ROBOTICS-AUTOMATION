@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useRef } from 'react';
@@ -216,21 +215,6 @@ export default function Home() {
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Logo Strip / Partners Section */}
-        <section className="py-12 bg-muted/30 border-y border-border overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6">
-            <p className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground text-center mb-16">Trusted by industry giants & government bodies</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-               {['ITC', 'TVS', 'HINDUSTAN FOODS', 'TN GOVT'].map((brand, i) => (
-                 <span key={i} className="text-2xl md:text-4xl font-black tracking-tighter flex items-center gap-2">
-                   {brand === 'TN GOVT' && <Landmark className="w-6 h-6" />}
-                   {brand}
-                 </span>
-               ))}
             </div>
           </div>
         </section>
