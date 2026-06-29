@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useRef } from 'react';
@@ -10,7 +11,7 @@ import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Factory, ShieldCheck, Zap, ArrowRight, Quote, Phone, Mail, Box, Wrench, Microscope, Briefcase } from 'lucide-react';
+import { Factory, ShieldCheck, Zap, ArrowRight, Quote, Phone, Mail, Box, Wrench, Microscope, Briefcase, Landmark } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
@@ -66,19 +67,70 @@ export default function Home() {
       <main ref={containerRef}>
         <Hero />
 
-        {/* Logo Strip / Partners Section */}
-        <section className="py-24 bg-white border-y border-border overflow-hidden">
+        {/* Who We Are Section */}
+        <section id="who-we-are" className="py-32 md:py-56 bg-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 dot-grid w-1/3 h-full opacity-[0.03] -z-10" />
           <div className="max-w-7xl mx-auto px-6">
-            <p className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground text-center mb-16">Trusted by global industry leaders</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-               {['PHARMA', 'BEVCO', 'LOGIX', 'METALIC', 'CHEM-X'].map((brand, i) => (
-                 <span key={i} className="text-3xl font-black tracking-tighter">{brand}</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-start">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="lg:col-span-5"
+              >
+                <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">Who We Are</span>
+                <h2 className="text-5xl md:text-7xl font-black mb-10 leading-[0.9] tracking-tighter uppercase">
+                  The Manufacturer India's Growing <span className="text-primary italic">Factories</span> Are Switching To
+                </h2>
+                <div className="w-24 h-2 bg-secondary mb-12" />
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="lg:col-span-7"
+              >
+                <div className="space-y-8">
+                  <p className="text-xl md:text-2xl font-medium leading-relaxed text-foreground">
+                    SAM Robotics & Automation is an automatic packing machine manufacturer built in Coimbatore — trusted by factories across India and in 25+ countries. 
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    We are a custom packaging machine manufacturer: every machine is engineered to your product, your speed, and your production floor — not pulled from a catalogue. Our commitment to bespoke engineering ensures that your production line is optimized for your specific operational needs.
+                  </p>
+                  
+                  <div className="pt-8 flex items-center gap-8 border-t border-border">
+                    <Link 
+                      href="/about" 
+                      className="group flex items-center gap-4 text-xs font-black uppercase tracking-[0.3em] hover:text-primary transition-colors"
+                    >
+                      Learn Our Story <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Logo Strip / Partners Section */}
+        <section className="py-24 bg-muted/30 border-y border-border overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6">
+            <p className="text-[10px] font-black tracking-[0.5em] uppercase text-muted-foreground text-center mb-16">Trusted by industry giants & government bodies</p>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+               {['ITC', 'TVS', 'HINDUSTAN FOODS', 'TN GOVT'].map((brand, i) => (
+                 <span key={i} className="text-2xl md:text-4xl font-black tracking-tighter flex items-center gap-2">
+                   {brand === 'TN GOVT' && <Landmark className="w-6 h-6" />}
+                   {brand}
+                 </span>
                ))}
             </div>
           </div>
         </section>
 
-        {/* Mission Section */}
+        {/* Mission Section / Engineering Philosophy */}
         <section id="intro" className="py-32 md:py-64 px-6 md:px-24 max-w-7xl mx-auto relative">
           <div className="absolute top-0 right-0 dot-grid w-96 h-96 -z-10" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
@@ -130,7 +182,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Process Section - NEW for "Completeness" */}
+        {/* Process Section */}
         <section id="process" className="py-32 md:py-64 bg-secondary text-white px-6 md:px-24">
           <div className="max-w-7xl mx-auto">
             <div className="mb-32">
