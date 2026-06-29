@@ -315,14 +315,19 @@ export default function AboutPage() {
         {/* 7. Facility Section */}
         <section className="py-24 bg-secondary text-white px-6 md:px-24 overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-              <div>
+            <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-12">
+              <div className="shrink-0">
                 <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">INFRASTRUCTURE</span>
-                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Our Facility</h2>
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Our Manufacturing Facility</h2>
               </div>
-              <p className="max-w-md text-white/50 text-sm font-medium leading-relaxed">
-                Our state-of-the-art manufacturing unit in Coimbatore is equipped with precision machining centers and a dedicated R&D lab for custom engineering.
-              </p>
+              <div className="max-w-3xl space-y-6">
+                <p className="text-white font-medium text-lg leading-relaxed">
+                  SAM operates a 5,000 sq ft manufacturing facility in Madukkarai, Coimbatore — housing the full range of fabrication, machining, welding, and assembly capabilities needed to build every machine in-house.
+                </p>
+                <p className="text-white/50 text-sm font-medium leading-relaxed">
+                  Building entirely in-house means we control quality at every stage, respond faster to custom requirements, and stand behind every finished machine completely. Our facility handles TIG, MIG, ARC, and spot welding; CNC and VMC machining; laser cutting; sheet rolling and bending; PLC programming; and full assembly and pre-dispatch testing — all under one roof in Coimbatore.
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 h-[600px]">
