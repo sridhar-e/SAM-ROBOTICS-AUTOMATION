@@ -14,11 +14,8 @@ import {
   Eye, 
   Award, 
   ShieldCheck, 
-  Lightbulb, 
-  Users, 
-  Zap, 
-  Search, 
-  Handshake,
+  Cpu, 
+  Headset,
   Quote
 } from 'lucide-react';
 import Image from 'next/image';
@@ -49,12 +46,21 @@ export default function AboutPage() {
   ];
 
   const values = [
-    { icon: ShieldCheck, title: "Quality First", desc: "No compromises on engineering integrity or component selection." },
-    { icon: Lightbulb, title: "Innovation", desc: "Continuously evolving our designs for faster, more accurate packing." },
-    { icon: Users, title: "Customer Success", desc: "Our machines are built to make your business more profitable." },
-    { icon: Zap, title: "Reliability", desc: "Industrial-grade builds meant to run 24/7 with minimal downtime." },
-    { icon: Search, title: "Transparency", desc: "Clear communication from initial quote to final site installation." },
-    { icon: Handshake, title: "Partnership", desc: "We don't just sell machines; we support your factory's growth." }
+    { 
+      icon: ShieldCheck, 
+      title: "Quality Is a Practice", 
+      desc: "We don't cut corners on components, construction, or testing. Every machine that leaves our facility — from a startup packing machine to a full industrial line — is built and checked to the same standard." 
+    },
+    { 
+      icon: Cpu, 
+      title: "Solutions Over Catalogues", 
+      desc: "Most of our machines are custom-built. When a client's product doesn't fit a standard machine, we send an engineer to understand the problem firsthand — and build the right solution." 
+    },
+    { 
+      icon: Headset, 
+      title: "Accountability After Delivery", 
+      desc: "Installation, operator training, 24×7 video support, spare parts supply — we stay involved long after the machine is running. A machine is only valuable when it works." 
+    }
   ];
 
   const facilityImages = [
@@ -281,7 +287,8 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-24">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">VALUES</span>
-              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">What We Stand For</h2>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-4">What We Stand For</h2>
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-[0.2em]">Three principles that shape every machine we build and every client relationship we keep.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
