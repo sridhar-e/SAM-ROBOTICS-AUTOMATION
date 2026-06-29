@@ -277,7 +277,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
-                  className="group bg-white border border-border overflow-hidden flex flex-col hover:border-primary/50 hover:shadow-2xl transition-all duration-500"
+                  className="group bg-white border border-border overflow-hidden flex flex-col flex-1 hover:border-primary/50 hover:shadow-2xl transition-all duration-500"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                     <Image
@@ -676,16 +676,6 @@ export default function Home() {
                     <p className="text-3xl font-black tracking-tight">ceo@samgoc.com</p>
                   </div>
                 </a>
-              </div>
-
-              <div className="mt-24 p-12 border-4 border-secondary/5 bg-muted/20 relative">
-                <div className="flex items-center gap-6 mb-8">
-                  <ShieldCheck className="w-10 h-10 text-primary" />
-                  <h4 className="font-black uppercase text-sm tracking-[0.2em]">Quality Verified</h4>
-                </div>
-                <p className="text-sm font-medium text-muted-foreground leading-relaxed">
-                  All components undergo rigorous multi-stage verification before dispatch. MSME and ISO certified manufacturing.
-                </p>
               </div>
             </div>
 
