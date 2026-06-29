@@ -74,8 +74,8 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* 1. Header Section - Adjusted padding to accommodate transparent Navbar */}
-        <section className="relative h-[90vh] flex items-center overflow-hidden bg-secondary pt-32">
+        {/* 1. Header Section - Adjusted height and padding to prevent overlap with Navbar */}
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-secondary pt-48 pb-24">
           <div className="absolute inset-0 opacity-40">
             <Image 
               src={PlaceHolderImages.find(img => img.id === 'hero-machinery')?.imageUrl || ""}
@@ -93,7 +93,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-3xl"
+              className="max-w-4xl"
             >
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 block">About SAM</span>
               <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase mb-12">
