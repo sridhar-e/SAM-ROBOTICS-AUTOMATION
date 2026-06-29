@@ -273,18 +273,19 @@ export default function AboutPage() {
               </motion.div>
             </div>
 
+            {/* Brand Principle Quote Block */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="max-w-4xl mx-auto mt-20 pl-10 border-l-[6px] border-primary py-2"
             >
-              <Quote className="w-12 h-12 text-primary/20 mx-auto mb-6" />
-              <h4 className="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-2 italic">
+              <h4 className="text-3xl md:text-5xl font-black italic tracking-tight mb-4 text-secondary leading-tight">
                 "Quality Is Not An Act. It's a Practice."
               </h4>
-              <p className="text-xs font-black uppercase tracking-[0.3em] text-muted-foreground">
-                — The SAM brand principle
+              <p className="text-lg font-bold text-primary flex items-center gap-3">
+                <span className="w-8 h-[2px] bg-primary"></span>
+                The SAM brand principle
               </p>
             </motion.div>
           </div>
