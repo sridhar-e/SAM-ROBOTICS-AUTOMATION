@@ -11,7 +11,7 @@ import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Factory, ShieldCheck, Zap, ArrowRight, Quote, Phone, Mail, Box, Wrench, Microscope, Briefcase, Landmark } from 'lucide-react';
+import { Factory, ShieldCheck, Zap, ArrowRight, Box, Wrench, Microscope, Briefcase, Landmark } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
@@ -68,10 +68,10 @@ export default function Home() {
         <Hero />
 
         {/* Who We Are Section */}
-        <section id="who-we-are" className="py-32 md:py-56 bg-white relative overflow-hidden">
+        <section id="who-we-are" className="py-32 md:py-64 bg-white relative overflow-hidden">
           <div className="absolute top-0 right-0 dot-grid w-1/3 h-full opacity-[0.03] -z-10" />
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -345,3 +345,16 @@ export default function Home() {
     </div>
   );
 }
+
+const Phone = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+  </svg>
+);
+
+const Mail = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+  </svg>
+);
