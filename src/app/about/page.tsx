@@ -92,7 +92,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="max-w-3xl"
             >
-              <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-secondary leading-[0.9] tracking-tighter uppercase mb-10">
+              <h1 className="text-5xl md:text-[65px] font-black text-secondary md:leading-[70px] leading-tight tracking-tighter uppercase mb-10">
                 Built on the Belief <br /> That a Machine Is <br /> Only as Good as the <br /> 
                 <span className="text-primary italic">Team Behind It.</span>
               </h1>
@@ -117,7 +117,7 @@ export default function AboutPage() {
 
         {/* 2. Our Story (Timeline) */}
         <section className="py-24 px-6 md:px-24 bg-white relative border-t border-border">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl auto">
             <div className="text-center mb-24">
               <span className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-4 block">JOURNEY</span>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">Our Story</h2>
@@ -353,7 +353,7 @@ export default function AboutPage() {
             </motion.h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
                <Button asChild size="lg" className="bg-primary text-white font-black h-20 px-16 rounded-none text-sm tracking-widest uppercase hover:bg-white hover:text-secondary transition-all">
-                  <Link href="/#contact">Get a Quote <ArrowRight className="ml-3 w-5 h-5" /></Link>
+                  <Link href="/#contact" className="flex items-center gap-3">Get a Quote <ArrowRight className="ml-3 w-5 h-5" /></Link>
                </Button>
                <Button asChild variant="outline" size="lg" className="border-2 border-white/20 text-white font-black h-20 px-16 rounded-none text-sm tracking-widest uppercase bg-transparent hover:bg-white hover:text-secondary transition-all">
                   <Link href="/#our-machines">View Catalogue</Link>
